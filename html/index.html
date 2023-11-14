@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She's Line</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/smooth-scrollbar.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wsg9q435nj"></script>
+   
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/common.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap" >
+
+        <header id="header" class="header">
+            <h1 class="logo">She's Line</h1>
+            <nav id="nav" class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area1'); return false"><span>About</span> </a> </li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area2'); return false"><span>Process</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area3'); return false"><span>Brand</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area4'); return false"><span>Product</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area5'); return false"><span>Store</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area6'); return false"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="" class="lang_btn"><span class="lang_ico"></span> KR</a>
+            </div>
+        </header>
+       
+        <div class="main_contents ">
+            <section>
+                <div class="mv">
+                    <video id="mv_vid" src="../assets/video/vid1.mp4" muted loop></video>
+                </div>
+                
+            </section>
+
+            <section class="pt100 pb100">
+                <div class="vid_open_wrap">
+                    <div class="vid_open ">
+                        <div class="vid_open_cv left"></div>
+                        <div class="vid_open_cv right"></div>
+                        <video id="mv_vid2" src="../assets/video/vid1.mp4" preload="" muted loop></video>
+                    </div>
+                </div>
+                
+            </section>
+            <section class="sec_area sec_area1">
+                <section class="sec sec1 ">
+                    <div class="inner">
+                        
+                        <div class="fill_txt_box mt100 mb100"></div>   
+                    </div>
+                </section>
+            </section>
+            <section>
+                <!-- <div  data-aos="fade-up">
+                    <div class="count_box"></div>
+                </div> -->
+
+                <div class="counter" data-value="99.99" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00.00</span>%
+                    </div>
+                </div>
+                <div class="counter" data-value="59" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                <div class="counter" data-value="83" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                <div class="counter " data-value="43" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                
+                <div style="height: 200vh;"></div>
+            </section>
+        </div>
+        <footer id="footer" class="footer">
+            <div class="inner">
+                <h2 class="footer_tit">머리에서 발끝까지의 아름다움 <br> (주)한국쉬즈라인</h2>
+                <button class="btn_top" aria-label="go to top"></button>
+                <ul class="footer_info">
+                    <li class="footer_info_item">
+                        <span class="tit">주소</span>
+                        <span class="cont">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">전화번호</span>
+                        <span class="cont">02-431-5500</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">팩스</span>
+                        <span class="cont">02-431-5510</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">이메일</span>
+                        <span class="cont">info@koreashesline.co.kr</span>
+                    </li>
+                </ul>
+                <p class="copy">&copy; 2023 쉬즈라인 모든 권리 보유.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            offset: 0,
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease-in-out',
+        });
+    </script>
+    
+</body>
+</html>
