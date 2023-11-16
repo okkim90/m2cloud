@@ -18,6 +18,104 @@ window.addEventListener('resize', ()=>{
 });
  
 
+gsap.timeline({
+  scrollTrigger : {
+      trigger: '.mv_section',
+      start: "top top",
+      //end: ()=> `+=${cover_img_h}`,
+      end: "bottom bottom",
+      pinSpacing: false,
+      pinType: "fixed",
+      //anticipatePin:1,
+      scrub:1,
+      pin: '.mv',
+      //markers:true,
+      invalidateOnRefresh:true
+  },
+}).to('.mv',{
+  opacity:0.5,
+  duration:1
+});
+
+
+gsap.to('.mv_tit_cont',{
+  opacity:0,
+  duration:1,
+  scale: 2,
+  ease: 'power2.inOut',
+  scrollTrigger : {
+      trigger: '.mv_tit',
+      start: "top top",
+      //end: ()=> `+=${cover_img_h}`,
+      end: "bottom bottom",
+      //pinSpacing: false,
+      pinType: "fixed",
+      //anticipatePin:1,
+      scrub:0.1,
+      pin: '.mv_tit_cont',
+      markers:true,
+      invalidateOnRefresh:true
+  },
+});
+const mv_fade = document.querySelectorAll('.mv_fade');
+
+mv_fade.forEach((e, i)=>{
+  console.log(i);
+  console.log(mv_fade.length);
+  if(i < mv_fade.length - 1){
+    gsap.timeline({
+      scrollTrigger : {
+          trigger: e,
+          //toggleActions: "",
+          start: "-110% 45%",
+          end: "110% 45%",
+          //toggleActions: "play pause resume reset",
+          // onEnter: () => gsap,
+          // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
+          // onLeave: () => gsap.to(e,{
+          //   duration:1, 
+          //   opacity:0.1,
+          // }),
+          //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
+          scrub:0.1,
+         // markers: true,
+        }
+    }).to(e,{
+      opacity:1,
+      duration:1
+    }).to(e,{
+      opacity:0.15,
+      //duration:1
+    })
+  }else{
+    gsap.timeline({
+      scrollTrigger : {
+          trigger: e,
+          //toggleActions: "",
+          start: "-110% 45%",
+          end: "110% 45%",
+          //toggleActions: "play pause resume reset",
+          // onEnter: () => gsap,
+          // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
+          // onLeave: () => gsap.to(e,{
+          //   duration:1, 
+          //   opacity:0.1,
+          // }),
+          //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
+          scrub:0.1,
+         // markers: true,
+        }
+    }).to(e,{
+      opacity:1,
+      //duration:0.1
+    })
+  }
+  
+})
+
+
+
+
 
 
 let currentScroll = 0;
@@ -59,7 +157,7 @@ fil_arr.forEach((e)=>{
         newBox_inner.innerHTML = e;
         newBox.setAttribute('data-text',e); 
         newBox.setAttribute('data-delay',e.length);
-        newBox_inner.style.transition = "width "+(e.length / 10)+"s linear";
+        newBox_inner.style.transition = "width "+(e.length / 30)+"s linear";
         newBox.append(newBox_inner);
         fill_txt_box.append(newBox);
     }
@@ -80,7 +178,7 @@ function fill_ani(){
     clearInterval(fill_timer);
     if(count < fill_txt_item.length){
         fill_txt_item[count].classList.add('on');
-        delay =  fill_txt_item[count].dataset.delay * 100; 
+        delay =  fill_txt_item[count].dataset.delay * 40; 
         count +=1;
        
         //console.log(fill_txt_item[count].style)
@@ -124,7 +222,7 @@ gsap.to('.vid_open_cv',{
         onLeave: () => document.getElementById('mv_vid2').pause(),
         onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
         scrub:0.5,
-        markers: true,
+        //markers: true,
     }
 });
 
@@ -164,7 +262,7 @@ function countEvent(target, start, end, duration) {
           year.innerText = start == 0 ? Number(year["var"]).toFixed() : Number(year["var"]).toFixed();
           graph.style.width = Number(year["var"]).toFixed(5) + '%'
         } else {
-          year.innerText = start == 0 ? Number(year["var"]).toFixed(2) : Number(year["var"]).toFixed();
+          year.innerText = start == 0 ? Number(year["var"]).toFixed(3) : Number(year["var"]).toFixed();
         }
   
         year.setAttribute('data-value', end);

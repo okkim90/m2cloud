@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>She's Line</title>
+    <title>m2cloud</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     
@@ -41,8 +41,28 @@
        
         <div class="main_contents ">
             <section>
+                <div style="height: 100vh; background:#000"></div>
+            </section>
+            <section class="mv_section">
                 <div class="mv">
-                    <video id="mv_vid" src="../assets/video/vid1.mp4" muted loop></video>
+                    <video id="mv_vid" src="../assets/video/vid1.mp4" preload="" muted loop></video>
+                </div>
+                <div class="mv_cont">
+                    <div class="mv_tit">
+                        <div class="mv_tit_cont">FUCK YOU</div>
+                    </div>
+                    <div class="mv_txt">
+                        <div class="mv_txt_item mv_fade">버러지같은 놈들</div>
+                        <div class="mv_txt_item mv_fade">인터렉션은 애플처럼 해달라하면서</div>
+                        <div class="mv_txt_item mv_fade">돈은 애플만큼 안주네ㅋㅋ</div>
+                        <div class="mv_txt_item mv_fade">이런 거지들이랑은</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                        <div class="mv_txt_item mv_fade">다시는 일 안함 ㅅㄱ</div>
+                    </div>
                 </div>
                 
             </section>
@@ -65,14 +85,27 @@
                     </div>
                 </section>
             </section>
+            <section class="sec_area sec_area2">
+
+                <div class="inner">
+                    <div class="btn_sort_box d_flex jc_c">
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="lte" onclick="solution_sort_change('lte')">a</button>
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="ble" onclick="solution_sort_change('ble')">b</button>
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="lte블루투스" onclick="solution_sort_change('lte블루투스')">c</button>
+                    </div>
+                    <div class="solution_list">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
+            </section>
             <section>
                 <!-- <div  data-aos="fade-up">
                     <div class="count_box"></div>
                 </div> -->
 
-                <div class="counter" data-value="99.99" data-aos="fade-up">
-                    <div class="counter_box_wrap">
-                        <span class="counter_box">00.00</span>%
+                <div class="counter ty_big" data-value="99.999" data-aos="fade-up">
+                    <div class="counter_box_wrap text_gradient">
+                        <span class="counter_box ">00.000</span>%
                     </div>
                 </div>
                 <div class="counter" data-value="59" data-aos="fade-up">
@@ -102,10 +135,11 @@
                         <span class="graph_bar"></span>
                     </div>
                 </div>
-                ㅇㄹ
+                
                 <div style="height: 200vh;"></div>
             </section>
         </div>
+        
         <footer id="footer" class="footer">
             <div class="inner">
                 <h2 class="footer_tit">머리에서 발끝까지의 아름다움 <br> (주)한국쉬즈라인</h2>
@@ -140,6 +174,149 @@
             duration: 1000, // values from 0 to 3000, with step 50ms
             easing: 'ease-in-out',
         });
+        
+        const solution_list_el = document.querySelector('.solution_list');
+        const solution_item = document.querySelectorAll('.solution_list_item');
+        const solution_btn = document.querySelectorAll('.solution_sort_btn');
+        const solution_list_sw = document.querySelector('.solution_list .swiper-wrapper'); 
+       
+        
+        
+        
+        const solution_data = [
+            {filter:'lte', media:'../assets/video/vid1.mp4', media_type:'video', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte', btnName:'모델명-LTE', media:'../assets/img/brand2.jpg', media_type:'img', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte', btnName:'모델명-LTE', media:'../assets/video/vid2.mp4', media_type:'video', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+
+            {filter:'ble', media:'../assets/img/brand1.jpg', media_type:'img', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'ble', media:'../assets/img/brand3.jpg', media_type:'img', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'ble', media:'../assets/video/vid1.mp4', media_type:'video', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+
+            {filter:'lte블루투스', media:'../assets/video/vid2.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid1.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/img/brand2.jpg', media_type:'img', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid2.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid1.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/img/brand2.jpg', media_type:'img', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'}
+        ];
+
+       
+        
+
+        const solution_swiper_setting = {
+            loop : true,
+            loopedSlides: 1,
+            speed : 400,
+            on : {
+                update : function(){
+                    slide_vid(this)
+                },
+                slideChange : function() {
+                    
+                    document.querySelector('.solution_list').querySelectorAll('.video').forEach((e)=>{
+                        e.pause()
+                    });
+                    
+                    slide_vid(this)
+                },
+            }
+        };
+       
+        function slide_vid(target){
+            let currentSlide = target.slides[target.activeIndex ];
+            if(currentSlide.querySelector('.video') ){
+                currentSlide.querySelector('.video').play();
+            }
+        }
+
+        
+        function solution_sort(filter_name){
+            const solution_cont = (()=>{
+                let arr = [];
+                solution_data.map((e, i)=>{
+                    if(e.filter == filter_name){
+                        if(e.media_type == 'img'){
+                            arr.push(
+                                `
+                                    <div data-value="${e.filter}"  class="solution_list_item swiper-slide">
+                                        <div class="inner_box">
+                                            <img src="${e.media}" alt="">
+                                        </div>
+                                    </div>
+                                `
+                            )
+                        }
+                        if(e.media_type == 'video'){
+                            arr.push(
+                                `   
+                                    <div data-value="${e.filter}"  class="solution_list_item swiper-slide has_vid">
+                                        <div class="inner_box">
+                                            <video class="video" src="${e.media}" preload="" muted loop></video>
+                                        </div>
+                                    </div>
+                                `
+                            )
+                        }
+                        
+                    }
+                    
+                });
+            
+                return arr.join('');
+            });
+            //console.log(solution_cont());
+            solution_list_sw.innerHTML = solution_cont();
+            /*
+            solution_item.forEach(e => {
+                e.style.display = 'none';
+                if(e.dataset.value == filter_name){
+                    e.style.display = 'block';
+                }
+            });
+            */
+            solution_btn.forEach(e => {
+                e.classList.remove('on');
+                if(e.dataset.value == filter_name){
+                    
+                    e.classList.add('on');
+                }
+            });
+        }
+
+        solution_sort('lte');
+
+        const solution_list = new Swiper('.solution_list', solution_swiper_setting);
+
+       
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        /*
+        async function solution_sort_change(_filter_name){
+            solution_list_el.classList.add('off');
+            await sleep(200);
+            solution_list.slideTo(0);
+            solution_sort(_filter_name);
+            solution_list.update();
+            await sleep(100);
+            solution_list_el.classList.remove('off');
+        }
+        */
+        function solution_sort_change(_filter_name){
+            
+            solution_sort(_filter_name);
+            
+            solution_list.loopDestroy();
+            
+            solution_list.loopCreate();
+            solution_list.update();
+            //solution_list.slideTo(0);
+            
+        }
+        
+        
+       
     </script>
     
 </body>
