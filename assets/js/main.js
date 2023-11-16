@@ -41,79 +41,132 @@ gsap.timeline({
 gsap.to('.mv_tit_cont',{
   opacity:0,
   duration:1,
-  scale: 2,
+  scale: 1.5,
   ease: 'power2.inOut',
   scrollTrigger : {
       trigger: '.mv_tit',
       start: "top top",
       //end: ()=> `+=${cover_img_h}`,
-      end: "bottom bottom",
+      end: "bottom top",
       //pinSpacing: false,
       pinType: "fixed",
       //anticipatePin:1,
       scrub:0.1,
       pin: '.mv_tit_cont',
-      markers:true,
+      //markers:true,
       invalidateOnRefresh:true
   },
 });
 const mv_fade = document.querySelectorAll('.mv_fade');
 
-mv_fade.forEach((e, i)=>{
-  console.log(i);
-  console.log(mv_fade.length);
-  if(i < mv_fade.length - 1){
-    gsap.timeline({
-      scrollTrigger : {
-          trigger: e,
-          //toggleActions: "",
-          start: "-110% 45%",
-          end: "110% 45%",
-          //toggleActions: "play pause resume reset",
-          // onEnter: () => gsap,
-          // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
-          // onLeave: () => gsap.to(e,{
-          //   duration:1, 
-          //   opacity:0.1,
-          // }),
-          //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
-          scrub:0.1,
-         // markers: true,
-        }
-    }).to(e,{
-      opacity:1,
-      duration:1
-    }).to(e,{
-      opacity:0.15,
-      //duration:1
-    })
-  }else{
-    gsap.timeline({
-      scrollTrigger : {
-          trigger: e,
-          //toggleActions: "",
-          start: "-110% 45%",
-          end: "110% 45%",
-          //toggleActions: "play pause resume reset",
-          // onEnter: () => gsap,
-          // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
-          // onLeave: () => gsap.to(e,{
-          //   duration:1, 
-          //   opacity:0.1,
-          // }),
-          //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
-          scrub:0.1,
-         // markers: true,
-        }
-    }).to(e,{
-      opacity:1,
-      //duration:0.1
-    })
-  }
+// mv_fade.forEach((e, i)=>{
+//   console.log(i);
+//   console.log(mv_fade.length);
+//   if(i < mv_fade.length - 1){
+//     gsap.timeline({
+//       scrollTrigger : {
+//           trigger: e,
+//           //toggleActions: "",
+//           start: "-110% 45%",
+//           end: "110% 45%",
+//           //toggleActions: "play pause resume reset",
+//           // onEnter: () => gsap,
+//           // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
+//           // onLeave: () => gsap.to(e,{
+//           //   duration:1, 
+//           //   opacity:0.1,
+//           // }),
+//           //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
+//           scrub:0.1,
+//          // markers: true,
+//         }
+//     }).to(e,{
+//       opacity:1,
+//       duration:1
+//     }).to(e,{
+//       opacity:0.15,
+//       //duration:1
+//     })
+//   }else{
+//     gsap.timeline({
+//       scrollTrigger : {
+//           trigger: e,
+//           //toggleActions: "",
+//           start: "-110% 45%",
+//           end: "110% 45%",
+//           //toggleActions: "play pause resume reset",
+//           // onEnter: () => gsap,
+//           // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
+//           // onLeave: () => gsap.to(e,{
+//           //   duration:1, 
+//           //   opacity:0.1,
+//           // }),
+//           //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
+//           scrub:0.1,
+//          // markers: true,
+//         }
+//     }).to(e,{
+//       opacity:1,
+//       //duration:0.1
+//     })
+//   }
   
+// })
+
+
+gsap.to('.mv_txt',{
+  opacity:1,
+  
+  ease: 'power2.inOut',
+  scrollTrigger : {
+      trigger: '.mv_txt',
+      start: "top bottom",
+
+      end: "center center",
+      scrub: 1,
+      invalidateOnRefresh:true,
+      markers: true,
+  },
 })
 
+const timeline = gsap.timeline({
+  
+  scrollTrigger : {
+      trigger: '.mv_txt',
+      start: "top top",
+      //end: ()=> `+=${cover_img_h}`,
+      end: "bottom bottom",
+      //pinSpacing: false,
+      //pinType: "fixed",
+      //anticipatePin:1,
+      scrub:1,
+      pin: '.mv_txt_cont',
+      //markers:true,
+      invalidateOnRefresh:true,
+      yoyo: true,
+  },
+});
 
+timeline
+.to('.mv_txt_item1',{opacity:1},0)
+.to('.mv_txt_item1',{opacity:0.15},1)
+.to('.mv_txt_item2', {opacity:1},1 )
+.to('.mv_txt_item2',{opacity:0.15},2)
+.to('.mv_txt_item3',{opacity:1},2 )
+.to('.mv_txt_item3',{opacity:0.15},3)
+.to('.mv_txt_item4',{opacity:1},3 )
+.to('.mv_txt_item4',{opacity:0.15},4)
+.to('.mv_txt_item5',{opacity:1},4 )
+// .to('.mv_txt_item3',{opacity:1,}).to('.mv_txt_item2',{opacity:0.15,})
+// .to('.mv_txt_item4',{opacity:1,}).to('.mv_txt_item3',{opacity:0.15,})
+// .to('.mv_txt_item5',{opacity:1,}).to('.mv_txt_item4',{opacity:0.15,})
+
+
+// timeline.to('.mv_txt_item1',{opacity:0.15,delay:1})
+// timeline.to('.mv_txt_item2',{opacity:0.15,delay:1})
+// timeline.to('.mv_txt_item3',{opacity:0.15,delay:1})
+// timeline.to('.mv_txt_item4',{opacity:0.15,delay:1})
+// timeline.to('.mv_txt_item5',{opacity:0.15,delay:1})
 
 
 

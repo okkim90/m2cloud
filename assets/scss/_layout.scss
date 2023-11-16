@@ -452,7 +452,7 @@
     &_cont {
         position: relative;
         z-index: 10;
-        padding-bottom: 100vh;
+        padding-bottom: 50vh;
     }
     &_tit {
         width: 100%;
@@ -470,10 +470,21 @@
         
     }
     &_txt {
-        font-size: 70px;
+        font-size: 60px;
         text-align: center;
         font-weight: bold;
         line-height: 1.4;
+        height: 160vh;
+        opacity: 0.5;
+        
+        &_cont {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+        } 
     }
     &_fade {
         &:first-child {

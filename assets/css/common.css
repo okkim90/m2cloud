@@ -4830,7 +4830,7 @@ input::-webkit-search-results-decoration {
 .mv_cont {
   position: relative;
   z-index: 10;
-  padding-bottom: 100vh;
+  padding-bottom: 50vh;
 }
 .mv_tit {
   width: 100%;
@@ -4845,10 +4845,19 @@ input::-webkit-search-results-decoration {
   font-weight: bold;
 }
 .mv_txt {
-  font-size: 70px;
+  font-size: 60px;
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
+  height: 160vh;
+  opacity: 0.5;
+}
+.mv_txt_cont {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .mv_fade {
   opacity: 0.15;
