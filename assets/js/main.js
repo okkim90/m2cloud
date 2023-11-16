@@ -37,6 +37,32 @@ gsap.timeline({
   duration:1
 });
 
+const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
+mv_slogan_item.forEach((e)=>{
+  gsap.timeline({
+    //duration:4, 
+    //y:100,
+    
+    ease: 'power2.inOut',
+    scrollTrigger : {
+        trigger: e,
+        //toggleActions: "play pause reverse none",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub:0.2,
+        markers: true,
+    }
+  }).to(e,{
+    opacity:1,
+    scale: 1
+  }).to(e,{
+    opacity:0,
+    scale: 0.5,
+  })
+  
+});
+
+
 
 gsap.to('.mv_tit_cont',{
   opacity:0,
@@ -125,7 +151,7 @@ gsap.to('.mv_txt',{
       end: "center center",
       scrub: 1,
       invalidateOnRefresh:true,
-      markers: true,
+      //markers: true,
   },
 })
 
