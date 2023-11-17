@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m2cloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/smooth-scrollbar.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wsg9q435nj"></script>
+   
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/common.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap" >
+
+        <header id="header" class="header">
+            <h1 class="logo"></h1>
+            <nav id="nav" class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area1'); return false"><span>About</span> </a> </li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area2'); return false"><span>Process</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area3'); return false"><span>Brand</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area4'); return false"><span>Product</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area5'); return false"><span>Store</span></a></li>
+                    <li class="nav_item"><a href="" onclick="gnb_link('.sec_area6'); return false"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <a href="" class="lang_btn"><span class="lang_ico"></span> KR</a>
+            </div>
+        </header>
+       
+        <div class="main_contents ">
+            <!-- <section>
+                <div style="height: 100vh; background:#000"></div>
+            </section> -->
+            <section class="sec mv_section">
+                <div class="mv">
+                    <video id="mv_vid" src="../assets/video/vid1.mp4" preload="" muted loop playsinline></video>
+                </div>
+                <div class="mv_cont">
+                    <div class="mv_tit">
+                        <div class="mv_tit_cont">열심히 하셨잖아, 한잔해</div>
+                    </div>
+
+                    <div class="mv_slogan">
+                        <div class="mv_slogan_cont">
+                            <div class="mv_slogan_item">
+                                <strong class="txt">m2Cloud는</strong> 
+                            </div>
+                            <div class="mv_slogan_item">
+                                <strong class="txt">‘2021 대한민국 디지털 대전환 ICT 선도기업’으로 선정된</strong>
+                            </div>
+                            <div class="mv_slogan_item">
+                                <strong class="txt">연구 중심의 IT기업입니다.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mv_txt">
+
+                        <div class="mv_txt_cont">
+                            <p class="mv_txt_tit" data-aos="fade-up">대한민국 대표 바이오 물류 서비스 기업</p>
+                            <div class="mv_txt_item_wrap">
+                                <div class="mv_txt_item mv_txt_item1 mv_fade">혁신적인 IoT 기술과 바이오 물류 서비스의 전문성으로 <br> 국가 코로나-19 백신 통합 물류 시스템 구축 사업자로 선정되었습니다. </div>
+                                <div class="mv_txt_item mv_txt_item2 mv_fade">국가 최대 규모의 백신 공급망 시스템의 성공적인 구축과 <br> 안정적인 서비스로 바이오 물류 서비스 기술력을 인정받았으며,</div>
+                                <div class="mv_txt_item mv_txt_item3 mv_fade">지속적인 연구개발과 독보적인 기술 경쟁 우위로 <br> 국내 바이오콜드체인 모니터링 시장을 선도하고 있습니다.</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </section>
+
+            <section class="sec">
+                <div class="vid_open_wrap">
+                    <div class="vid_open ">
+                        <div class="vid_open_cv left"></div>
+                        <div class="vid_open_cv right"></div>
+                        <video id="mv_vid2" src="../assets/video/vid1.mp4" preload="" muted loop playsinline></video>
+                    </div>
+                </div>
+                
+            </section>
+            <section class="sec">
+
+                <div class="inner">
+                    <div class="btn_sort_box d_flex jc_c">
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="lte" onclick="solution_sort_change('lte')">a</button>
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="ble" onclick="solution_sort_change('ble')">b</button>
+                        <button type="button" class="solution_sort_btn btn_sort" data-value="lte블루투스" onclick="solution_sort_change('lte블루투스')">c</button>
+                    </div>
+                    <div class="solution_list">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <!-- <div  data-aos="fade-up">
+                    <div class="count_box"></div>
+                </div> -->
+
+                <div class="counter ty_big" data-value="99.999" data-aos="fade-up">
+                    <div class="counter_box_wrap text_gradient">
+                        <span class="counter_box ">00.000</span>%
+                    </div>
+                </div>
+                <div class="counter" data-value="59" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                <div class="counter" data-value="83" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                <div class="counter " data-value="43" data-aos="fade-up">
+                    <div class="counter_box_wrap">
+                        <span class="counter_box">00</span>%
+                    </div>
+                   
+                    <div class="graph">
+                        <span class="graph_bar"></span>
+                    </div>
+                </div>
+                
+                <div style="height: 200vh;"></div>
+            </section>
+        </div>
+        
+        <footer id="footer" class="footer">
+            <div class="inner">
+                <h2 class="footer_tit">머리에서 발끝까지의 아름다움 <br> (주)한국쉬즈라인</h2>
+                <button class="btn_top" aria-label="go to top"></button>
+                <ul class="footer_info">
+                    <li class="footer_info_item">
+                        <span class="tit">주소</span>
+                        <span class="cont">05770 서울특별시 송파구 오금로46길 19-1 쉬즈빌딩</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">전화번호</span>
+                        <span class="cont">02-431-5500</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">팩스</span>
+                        <span class="cont">02-431-5510</span>
+                    </li>
+                    <li class="footer_info_item">
+                        <span class="tit">이메일</span>
+                        <span class="cont">info@koreashesline.co.kr</span>
+                    </li>
+                </ul>
+                <p class="copy">&copy; 2023 쉬즈라인 모든 권리 보유.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        AOS.init({
+            offset: 0,
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease-in-out',
+        });
+        
+        const solution_list_el = document.querySelector('.solution_list');
+        const solution_item = document.querySelectorAll('.solution_list_item');
+        const solution_btn = document.querySelectorAll('.solution_sort_btn');
+        const solution_list_sw = document.querySelector('.solution_list .swiper-wrapper'); 
+        const solution_data = [
+            {filter:'lte', media:'../assets/video/vid1.mp4', media_type:'video', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte', btnName:'모델명-LTE', media:'../assets/img/brand2.jpg', media_type:'img', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte', btnName:'모델명-LTE', media:'../assets/video/vid2.mp4', media_type:'video', txt:'a Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+
+            {filter:'ble', media:'../assets/img/brand1.jpg', media_type:'img', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'ble', media:'../assets/img/brand3.jpg', media_type:'img', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'ble', media:'../assets/video/vid1.mp4', media_type:'video', txt:'b Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+
+            {filter:'lte블루투스', media:'../assets/video/vid2.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid1.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/img/brand2.jpg', media_type:'img', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid2.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/video/vid1.mp4', media_type:'video', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'},
+            {filter:'lte블루투스', media:'../assets/img/brand2.jpg', media_type:'img', txt:'c Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium'}
+        ];
+
+       
+        
+
+        const solution_swiper_setting = {
+            loop : true,
+            loopedSlides: 1,
+            speed : 400,
+            on : {
+                update : function(){
+                    slide_vid(this)
+                },
+                slideChange : function() {
+                    
+                    document.querySelector('.solution_list').querySelectorAll('.video').forEach((e)=>{
+                        e.pause()
+                    });
+                    
+                    slide_vid(this)
+                },
+            }
+        };
+       
+        function slide_vid(target){
+            let currentSlide = target.slides[target.activeIndex ];
+            if(currentSlide.querySelector('.video') ){
+                currentSlide.querySelector('.video').play();
+            }
+        }
+
+        
+        function solution_sort(filter_name){
+            const solution_cont = (()=>{
+                let arr = [];
+                solution_data.map((e, i)=>{
+                    if(e.filter == filter_name){
+                        if(e.media_type == 'img'){
+                            arr.push(
+                                `
+                                    <div data-value="${e.filter}"  class="solution_list_item swiper-slide">
+                                        <div class="inner_box">
+                                            <img src="${e.media}" alt="">
+                                        </div>
+                                    </div>
+                                `
+                            )
+                        }
+                        if(e.media_type == 'video'){
+                            arr.push(
+                                `   
+                                    <div data-value="${e.filter}"  class="solution_list_item swiper-slide has_vid">
+                                        <div class="inner_box">
+                                            <video class="video" src="${e.media}" preload="" muted loop playsinline></video>
+                                        </div>
+                                    </div>
+                                `
+                            )
+                        }
+                        
+                    }
+                    
+                });
+            
+                return arr.join('');
+            });
+            //console.log(solution_cont());
+            solution_list_sw.innerHTML = solution_cont();
+            /*
+            solution_item.forEach(e => {
+                e.style.display = 'none';
+                if(e.dataset.value == filter_name){
+                    e.style.display = 'block';
+                }
+            });
+            */
+            solution_btn.forEach(e => {
+                e.classList.remove('on');
+                if(e.dataset.value == filter_name){
+                    
+                    e.classList.add('on');
+                }
+            });
+        }
+
+        solution_sort('lte');
+
+        const solution_list = new Swiper('.solution_list', solution_swiper_setting);
+
+       
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        /*
+        async function solution_sort_change(_filter_name){
+            solution_list_el.classList.add('off');
+            await sleep(200);
+            solution_list.slideTo(0);
+            solution_sort(_filter_name);
+            solution_list.update();
+            await sleep(100);
+            solution_list_el.classList.remove('off');
+        }
+        */
+        function solution_sort_change(_filter_name){
+            
+            solution_sort(_filter_name);
+            
+            solution_list.loopDestroy();
+            
+            solution_list.loopCreate();
+            solution_list.update();
+            //solution_list.slideTo(0);
+            
+        }
+        
+        
+       
+    </script>
+    
+</body>
+</html>

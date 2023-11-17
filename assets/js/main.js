@@ -16,11 +16,56 @@ window.addEventListener('resize', ()=>{
         setScreenSize()
     }
 });
+
+/* header */
+const mv_section = document.querySelector('.mv_section');
+const header = document.querySelector('.header');
+ScrollTrigger.create({
+    trigger: mv_section,
+    start:()=> "top " + header.offsetHeight,
+    end:()=> "bottom " + header.offsetHeight,
+    onEnter: () => header.classList.remove('on'),
+    onLeave: () => {header.classList.add('on')},
+    onEnterBack:() => header.classList.remove('on'),
+    onLeaveBack:() => {header.classList.add('on')},
+});
+
+let lastScrollTop = 0;
+let didScroll = false;
+let isScrollingDown = true;
+let scrollTimer;
+let delta = 50;
+window.addEventListener("scroll", function(){
+  didScroll = true;
+  setInterval(()=>{
+    if(didScroll){
+      hasScrolled();
+      didScroll = false;
+    }
+  },100);
+    
+});
+
+function hasScrolled(){
+  let st = window.pageYOffset;
+  if(Math.abs(lastScrollTop - st) < delta){
+    return;
+  }
+  if (st > lastScrollTop){
+    header.classList.add('up');
+  }else{
+    header.classList.remove('up');
+  }
+  
+  
+  lastScrollTop = st
+}
+
  
 
 gsap.timeline({
   scrollTrigger : {
-      trigger: '.mv_section',
+      trigger: mv_section,
       start: "top top",
       //end: ()=> `+=${cover_img_h}`,
       end: "bottom bottom",
@@ -40,26 +85,22 @@ gsap.timeline({
 const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
 mv_slogan_item.forEach((e)=>{
   gsap.timeline({
-    //duration:4, 
-    //y:100,
-    
     ease: 'power2.inOut',
     scrollTrigger : {
         trigger: e,
-        //toggleActions: "play pause reverse none",
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub:0.2,
-        markers: true,
+        start: "top 100%",
+        end: "bottom 0",
+        scrub:true,
     }
-  }).to(e,{
+  })
+  .to(e,{
     opacity:1,
     scale: 1
-  }).to(e,{
+  })
+  .to(e,{
     opacity:0,
     scale: 0.5,
   })
-  
 });
 
 
@@ -72,81 +113,22 @@ gsap.to('.mv_tit_cont',{
   scrollTrigger : {
       trigger: '.mv_tit',
       start: "top top",
-      //end: ()=> `+=${cover_img_h}`,
       end: "bottom top",
-      //pinSpacing: false,
       pinType: "fixed",
-      //anticipatePin:1,
       scrub:0.1,
       pin: '.mv_tit_cont',
-      //markers:true,
       invalidateOnRefresh:true
   },
 });
 const mv_fade = document.querySelectorAll('.mv_fade');
 
-// mv_fade.forEach((e, i)=>{
-//   console.log(i);
-//   console.log(mv_fade.length);
-//   if(i < mv_fade.length - 1){
-//     gsap.timeline({
-//       scrollTrigger : {
-//           trigger: e,
-//           //toggleActions: "",
-//           start: "-110% 45%",
-//           end: "110% 45%",
-//           //toggleActions: "play pause resume reset",
-//           // onEnter: () => gsap,
-//           // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
-//           // onLeave: () => gsap.to(e,{
-//           //   duration:1, 
-//           //   opacity:0.1,
-//           // }),
-//           //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
-//           scrub:0.1,
-//          // markers: true,
-//         }
-//     }).to(e,{
-//       opacity:1,
-//       duration:1
-//     }).to(e,{
-//       opacity:0.15,
-//       //duration:1
-//     })
-//   }else{
-//     gsap.timeline({
-//       scrollTrigger : {
-//           trigger: e,
-//           //toggleActions: "",
-//           start: "-110% 45%",
-//           end: "110% 45%",
-//           //toggleActions: "play pause resume reset",
-//           // onEnter: () => gsap,
-//           // onEnterBack: ()=> document.getElementById('mv_vid2').play(),
-//           // onLeave: () => gsap.to(e,{
-//           //   duration:1, 
-//           //   opacity:0.1,
-//           // }),
-//           //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
-//           scrub:0.1,
-//          // markers: true,
-//         }
-//     }).to(e,{
-//       opacity:1,
-//       //duration:0.1
-//     })
-//   }
-  
-// })
-
-
 gsap.to('.mv_txt',{
   opacity:1,
-  
+  //y:0,
   ease: 'power2.inOut',
   scrollTrigger : {
       trigger: '.mv_txt',
-      start: "top bottom",
+      start: "top center",
 
       end: "center center",
       scrub: 1,
@@ -163,58 +145,36 @@ const timeline = gsap.timeline({
       //end: ()=> `+=${cover_img_h}`,
       end: "bottom bottom",
       //pinSpacing: false,
-      //pinType: "fixed",
+      pinType: "fixed",
       //anticipatePin:1,
       scrub:1,
       pin: '.mv_txt_cont',
       //markers:true,
       invalidateOnRefresh:true,
-      yoyo: true,
+      //yoyo: true,
   },
 });
 
 timeline
 .to('.mv_txt_item1',{opacity:1},0)
+.to('.mv_txt_item1',{opacity:1},0)
 .to('.mv_txt_item1',{opacity:0.15},1)
 .to('.mv_txt_item2', {opacity:1},1 )
 .to('.mv_txt_item2',{opacity:0.15},2)
 .to('.mv_txt_item3',{opacity:1},2 )
-.to('.mv_txt_item3',{opacity:0.15},3)
-.to('.mv_txt_item4',{opacity:1},3 )
-.to('.mv_txt_item4',{opacity:0.15},4)
-.to('.mv_txt_item5',{opacity:1},4 )
-// .to('.mv_txt_item3',{opacity:1,}).to('.mv_txt_item2',{opacity:0.15,})
-// .to('.mv_txt_item4',{opacity:1,}).to('.mv_txt_item3',{opacity:0.15,})
-// .to('.mv_txt_item5',{opacity:1,}).to('.mv_txt_item4',{opacity:0.15,})
-
-
-// timeline.to('.mv_txt_item1',{opacity:0.15,delay:1})
-// timeline.to('.mv_txt_item2',{opacity:0.15,delay:1})
-// timeline.to('.mv_txt_item3',{opacity:0.15,delay:1})
-// timeline.to('.mv_txt_item4',{opacity:0.15,delay:1})
-// timeline.to('.mv_txt_item5',{opacity:0.15,delay:1})
+.to('.mv_txt_item3',{opacity:1},3 )
+.to('.mv_txt_item3',{opacity:1},3 )
 
 
 
 
-let currentScroll = 0;
-let isScrollingDown = true;
-let scrollTimer;
-window.addEventListener("scroll", function(){
-    if ( window.pageYOffset > currentScroll && currentScroll > 100 ) {
-        isScrollingDown = true;
-        //console.log('down');
-        header.classList.add('up');
-    } else {
-        isScrollingDown = false;
-        //console.log('down');
-        header.classList.remove('up');
-    }
-    currentScroll = window.pageYOffset
-});
 
 
 
+
+
+
+/*
 let fill_txt_box = document.querySelector('.fill_txt_box');
 let fill_txt = `오랜 업무 노하우를 바탕으로 디자인, 상품기획, 개발, 제작까지의 전문 기획 진행과 영업력, / 적재, 배송과 판매를 위한 원스탑 관리 물류 시스템을 도입하여 뷰티툴 전문 기업으로 발전하였습니다. / IOS 9001과 ISO 14001 인증을 획득하여 안정적인 시스템과 환경경영시스템 구축을 통하여 / 높은 수준의 제품과 품질 제공을 약속합니다.`
 let fil_arr = fill_txt.split(" ");
@@ -248,10 +208,6 @@ let count = 0;
 let delay ;
 let interval;
 
-function changeTimer() { 
-    
-}
-
 
 function fill_ani(){
     clearInterval(fill_timer);
@@ -264,8 +220,6 @@ function fill_ani(){
     }
     fill_timer = setInterval(fill_ani, delay);
 }
-
-
 
 function reset_ani(){
     //count = 0;
@@ -281,7 +235,7 @@ ScrollTrigger.create({
     onLeaveBack: ()=> reset_ani(),
     //markers:true,
 });
-
+*/
 
 
 window.addEventListener('DOMContentLoaded',()=>{
@@ -295,11 +249,11 @@ gsap.to('.vid_open_cv',{
         trigger: '.vid_open_cv',
         toggleActions: "play pause reverse none",
         start: "top 100%",
-        end: "bottom 20%",
+        end: "bottom center",
         onEnter: () => document.getElementById('mv_vid2').play(),
-        onEnterBack: ()=> document.getElementById('mv_vid2').play(),
-        onLeave: () => document.getElementById('mv_vid2').pause(),
-        onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
+        //onEnterBack: ()=> document.getElementById('mv_vid2').play(),
+        //onLeave: () => document.getElementById('mv_vid2').pause(),
+        //onLeaveBack: ()=> document.getElementById('mv_vid2').pause(),
         scrub:0.5,
         //markers: true,
     }
@@ -333,7 +287,7 @@ function countEvent(target, start, end, duration) {
     year["var"] = Number(start);
     gsap.to(year, {
       "var": end,
-      //delay: 0.75,
+      delay: 0.2,
       duration: duration ? duration : 3,
       ease: 'power2.inOut',
       onUpdate: function onUpdate() {
@@ -379,6 +333,77 @@ counter.forEach((e, i)=>{
 
 
 
+
+/*  */
+const fixed_area = document.querySelectorAll('.fixed_area');
+
+fixed_area.forEach((e)=>{
+  const fixed_area_bg = e.querySelector('.fixed_area_bg');
+  const fixed_area_cont = e.querySelector('.fixed_area_cont');
+  const fixed_area_item = e.querySelectorAll('.fixed_area_item');
+  gsap.timeline({
+    
+    scrollTrigger : {
+        trigger: e,
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: true,
+        pinType: "fixed",
+        scrub:1,
+        anticipatePin:1,
+        pin: fixed_area_bg,
+        invalidateOnRefresh:true
+    },
+  });
+
+  gsap.timeline({
+    scrollTrigger : {
+        trigger: e,
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: true,
+        pinType: "fixed",
+        scrub:1,
+        pin: fixed_area_cont,
+        invalidateOnRefresh:true
+    },
+  }).to(fixed_area_item[0],{
+    opacity:1,
+    y:0
+  }).to(fixed_area_item[1],{
+    opacity:1,
+    y:0
+  }).to(fixed_area_item[2],{
+    opacity:1,
+    y:0
+  }).to(fixed_area_item[2],{
+    opacity:1,
+    y:0
+  });
+  
+});
+
+
+
+
+let wh = window.outerHeight;
+const isInViewport = (target) => {
+    let top = target.getBoundingClientRect().top - wh;
+    let bot = target.getBoundingClientRect().top + target.offsetHeight;
+    return (top < 0 )  && (bot > 0) ;
+};
+const aniBox = document.querySelectorAll('.aniBox');
+['resize', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
+    wh = window.outerHeight;
+    aniBox.forEach((e)=>{
+        if(isInViewport(e)){
+            e.classList.add('gogo');
+        }
+        // else {
+        //     e.classList.remove('gogo');
+        // }
+    });
+}));
 
 
 
