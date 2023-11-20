@@ -3,51 +3,51 @@
 /* colors */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 .fc_key {
-  color: #fa77a2;
+  color: #000;
 }
 
 .bg_key {
-  background-color: #fa77a2;
+  background-color: #000;
 }
 
 .bd_key {
-  border-color: #fa77a2;
+  border-color: #000;
 }
 
 .fc_key2 {
-  color: #b95252;
+  color: #000;
 }
 
 .bg_key2 {
-  background-color: #b95252;
+  background-color: #000;
 }
 
 .bd_key2 {
-  border-color: #b95252;
+  border-color: #000;
 }
 
 .fc_key3 {
-  color: #e7df97;
+  color: #000;
 }
 
 .bg_key3 {
-  background-color: #e7df97;
+  background-color: #000;
 }
 
 .bd_key3 {
-  border-color: #e7df97;
+  border-color: #000;
 }
 
 .fc_key4 {
-  color: #85bee2;
+  color: #000;
 }
 
 .bg_key4 {
-  background-color: #85bee2;
+  background-color: #000;
 }
 
 .bd_key4 {
-  border-color: #85bee2;
+  border-color: #000;
 }
 
 .fc_key5 {
@@ -2868,7 +2868,7 @@ input[type=tel]:focus,
 input[type=email]:focus,
 input[type=search]:focus,
 textarea:focus {
-  border-color: #fa77a2;
+  border-color: #000;
   background-color: #fff;
   outline: none;
 }
@@ -2914,12 +2914,12 @@ input::-webkit-search-results-decoration {
 }
 
 ::-moz-selection {
-  background: rgba(250, 119, 162, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
 }
 
 ::selection {
-  background: #fa77a2;
+  background: #000;
   color: #fff;
 }
 
@@ -3483,7 +3483,7 @@ input::-webkit-search-results-decoration {
   margin-top: 48px;
   font-size: 12px;
   display: flex;
-  gap: 36px;
+  gap: 57px;
   letter-spacing: normal;
 }
 .footer_info .tit {
@@ -3570,6 +3570,9 @@ input::-webkit-search-results-decoration {
   font-size: 18px;
   margin-top: 16px;
   line-height: 1.6;
+}
+.sec_tit.ty2 {
+  margin-bottom: 48px;
 }
 
 .fill_txt_box {
@@ -3887,19 +3890,19 @@ input::-webkit-search-results-decoration {
   -webkit-text-fill-color: transparent;
 }
 
-.service_list {
+.coldchain_list {
   display: flex;
   gap: 24px;
 }
-.service_item .txt_box {
+.coldchain_item .txt_box {
   margin-top: 24px;
 }
-.service_item .txt_box .tit {
+.coldchain_item .txt_box .tit {
   display: block;
   font-size: 20px;
   line-height: 1.2;
 }
-.service_item .txt_box .desc {
+.coldchain_item .txt_box .desc {
   font-size: 16px;
   margin-top: 12px;
 }
@@ -3981,6 +3984,18 @@ input::-webkit-search-results-decoration {
 .power .vid_open_wrap {
   margin: 100px 0;
 }
+.power .txt_box {
+  margin-top: 75px;
+}
+.power .txt_box p + p {
+  margin-top: 24px;
+}
+.power .txt_box p + .btn {
+  margin-top: 32px;
+}
+.power .txt_box .btn + p {
+  margin-top: 48px;
+}
 
 .counter {
   display: flex;
@@ -4025,4 +4040,118 @@ input::-webkit-search-results-decoration {
   background: linear-gradient(90deg, rgb(0, 159, 209) 0%, rgb(23, 0, 116) 100%);
   height: 100%;
   width: 0;
+}
+
+.logistic .inner_sec {
+  margin-top: 100px;
+}
+.logistic_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+}
+.logistic_list .col_item {
+  width: calc(33.3333333333% - 16px);
+}
+.logistic_card {
+  background-color: #fff;
+  height: 416px;
+  padding: 60px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.logistic_card .ico_box {
+  height: 48px;
+  display: block;
+  margin-bottom: 24px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+.logistic_card .tit {
+  display: block;
+  font-size: 26px;
+  line-height: 1.5;
+  letter-spacing: -0.4px;
+  transition: color 0.2s ease-in-out;
+  margin-bottom: 12px;
+}
+.logistic_card .desc {
+  visibility: hidden;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.2s ease-in-out;
+}
+.logistic_card .card_btn {
+  position: absolute;
+  right: 36px;
+  bottom: 36px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.logistic_card .card_btn::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 19px;
+  background-color: #000;
+  left: 50%;
+  top: 50%;
+  margin-top: -9px;
+  transition: background-color 0.2s ease-in-out;
+}
+.logistic_card .card_btn::before {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 1px;
+  background-color: #000;
+  left: 50%;
+  top: 50%;
+  margin-left: -9px;
+  transition: background-color 0.2s ease-in-out;
+}
+.logistic_card.on {
+  background-color: #000;
+  color: #fff;
+}
+.logistic_card.on .ico_box {
+  height: 0;
+  margin-bottom: 0;
+}
+.logistic_card.on .desc {
+  max-height: 200px;
+  visibility: visible;
+}
+.logistic_card.on .card_btn {
+  border-color: #fff;
+  transform: rotate(225deg);
+}
+.logistic_card.on .card_btn::after, .logistic_card.on .card_btn::before {
+  background-color: #fff;
+}
+
+.value_list {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px 24px;
+}
+.value_list .col_item {
+  width: calc(33.3333333333% - 16px);
+}
+.value_list li {
+  text-align: center;
+}
+.value_list li .ico_box {
+  height: 50px;
+}
+.value_list li .desc {
+  margin-top: 24px;
+  font-weight: bold;
+  font-size: 20px;
 }

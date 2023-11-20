@@ -390,7 +390,8 @@ let wh = window.outerHeight;
 const isInViewport = (target) => {
     let top = target.getBoundingClientRect().top - wh;
     let bot = target.getBoundingClientRect().top + target.offsetHeight;
-    return (top < 0 )  && (bot > 0) ;
+    //console.log(top, bot)
+    return (top + (wh/10) < 0 )  && (bot - (wh/10) > 0) ;
 };
 const aniBox = document.querySelectorAll('.aniBox');
 ['resize', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
@@ -406,4 +407,29 @@ const aniBox = document.querySelectorAll('.aniBox');
 }));
 
 
+
+
+
+const logistic_card = document.querySelectorAll('.logistic_card');
+const logistic_card_btn = document.querySelectorAll('.logistic_card .card_btn');
+logistic_card.forEach((e)=>{
+  e.addEventListener('click',(event)=>{
+    
+    
+    if(!e.classList.contains('on')){
+      e.classList.add('on');
+    } 
+  });
+});
+logistic_card_btn.forEach((e)=>{
+  let card = e.parentNode;
+
+  e.addEventListener('click',(event)=>{
+    if(card.classList.contains('on')){
+      event.stopPropagation();
+      card.classList.remove('on')
+    }
+    
+  });
+});
 

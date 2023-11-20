@@ -313,7 +313,7 @@
         margin-top: 48px;
         font-size: 12px;
         display: flex;
-        gap: 36px;
+        gap: 57px;
         letter-spacing: normal;
         .tit {
             display: block;
@@ -398,6 +398,9 @@
             font-size: 18px;
             margin-top: 16px;
             line-height: 1.6;
+        }
+        &.ty2 {
+            margin-bottom: 48px;  
         }
     }
     
@@ -761,7 +764,7 @@ inherits: false;
 
 
 
-.service {
+.coldchain {
     &_list {
         display: flex;
         gap: 24px;
@@ -870,6 +873,18 @@ inherits: false;
     .vid_open_wrap {
         margin: 100px 0;
     }
+    .txt_box {
+        margin-top: 75px;
+        p + p {
+            margin-top: 24px;
+        }
+        p + .btn {
+            margin-top: 32px;
+        }
+        .btn + p {
+            margin-top: 48px;
+        }
+    }
 
     
 }
@@ -921,6 +936,117 @@ inherits: false;
             height: 100%;
             width: 0;
             //transition: width .2s ease-in-out;
+        }
+    }
+}
+
+.logistic {
+    .inner_sec {
+        margin-top: 100px;
+    }
+    &_list {
+        @include flex_gap (3, 24px, 0)
+    }
+    &_card {
+        background-color: #fff;
+        height: 416px;
+        padding: 60px;
+        box-sizing: border-box;
+        position: relative;
+        cursor: pointer;
+        transition: background-color .2s ease-in-out;
+    
+        .ico_box {
+            height: 48px;
+            display: block;
+            margin-bottom: 24px;
+            transition: all .2s ease-in-out;
+            overflow: hidden;
+        }
+        .tit {
+            display: block;
+            font-size: 26px;
+            line-height: 1.5;
+            letter-spacing: -0.4px;
+            transition: color .2s ease-in-out;
+            margin-bottom: 12px;
+        }
+        .desc {
+            visibility: hidden;
+            overflow: hidden;
+            max-height: 0;
+            transition: all .2s ease-in-out;
+        }
+        .card_btn {
+            position: absolute;
+            right: 36px;
+            bottom: 36px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .2s ease-in-out;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 19px;
+                background-color: #000;
+                left: 50%;
+                top: 50%;
+                margin-top: -9px;
+                transition: background-color .2s ease-in-out;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 19px;
+                height: 1px;
+                background-color: #000;
+                left: 50%;
+                top: 50%;
+                margin-left: -9px;
+                
+                transition: background-color .2s ease-in-out;
+            }
+        }
+
+        &.on {
+            background-color: #000;
+            color: #fff;
+            .ico_box {
+                height: 0;
+                margin-bottom: 0;
+            }
+            .desc {
+                max-height: 200px;
+                visibility: visible;
+            }
+            .card_btn {
+                border-color: #fff;
+                transform: rotate(225deg);
+                &::after, &::before {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.value {
+    &_list {
+        margin-top: 100px;
+        @include flex_gap(3, 24px, 100px);
+        li {
+            text-align: center;
+            .ico_box {
+                height: 50px;
+            }
+            .desc {
+                margin-top: 24px;
+                font-weight: bold;
+                font-size: 20px;
+            }
         }
     }
 }
