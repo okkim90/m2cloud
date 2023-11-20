@@ -10,12 +10,12 @@ function setScreenSize() {
 setScreenSize();
 
 var prevWidth = window.innerWidth;
-window.addEventListener('resize', ()=>{
-    if (window.innerWidth !== prevWidth ) {
-        prevWidth = window.innerWidth;
-        setScreenSize()
-    }
-});
+// window.addEventListener('resize', ()=>{
+//     if (window.innerWidth !== prevWidth ) {
+//         prevWidth = window.innerWidth;
+//         setScreenSize()
+//     }
+// });
 
 /* header */
 const mv_section = document.querySelector('.mv_section');
@@ -53,8 +53,18 @@ function hasScrolled(){
   }
   if (st > lastScrollTop){
     header.classList.add('up');
+    if(window.pageYOffset + document.documentElement.clientHeight  > document.querySelector('#footer').offsetTop + 100){
+        btn_top.classList.add('up')
+    }else{
+        btn_top.classList.remove('up')
+    }
   }else{
     header.classList.remove('up');
+    if(window.pageYOffset > 200){
+        btn_top.classList.add('up')
+    }else{
+        btn_top.classList.remove('up')
+    }
   }
   
   
@@ -363,6 +373,7 @@ fixed_area.forEach((e)=>{
         end: "bottom bottom",
         pinSpacing: true,
         pinType: "fixed",
+        anticipatePin:1,
         scrub:1,
         pin: fixed_area_cont,
         invalidateOnRefresh:true
@@ -433,3 +444,61 @@ logistic_card_btn.forEach((e)=>{
   });
 });
 
+
+const solution_list_nav = ['LTE','BLE','LTE+BLE'];
+const solution_list = new Swiper('.solution_list', {
+  spaceBetween: 24,
+  loop: true,
+  speed: 400,
+  navigation: {
+    nextEl: '.solution_list_next',
+    prevEl: '.solution_list_prev',
+  },
+  pagination: {
+    el: '.solution_list_page',
+    clickable: true,
+      renderBullet: function (index, className) {
+        return '<div type="button" class="btn _tab '+ className +'">' + (solution_list_nav[index]) + '</div>';
+      },
+  },
+});
+
+
+/* go to top */
+const btn_top = document.querySelector('.btn_top');
+btn_top.addEventListener('click',()=>{
+    let body = document.getElementsByTagName('body')[0];
+   
+    gsap.to(window,{
+        duration: 0.8,
+        ease: "power2.inOut",
+        scrollTo:body.offsetTop,
+        delay:  0.06
+    })
+});
+
+
+/* nav */
+function gnb_link(sec){
+  let pos = document.querySelector(sec);
+  const h_h = document.querySelector('#header').offsetHeight
+  gsap.to(window,{
+      duration: 0.8,
+      ease: "power2.inOut",
+      scrollTo:pos,
+      delay:  0.06
+  })
+}
+
+/* popup solutuion */ 
+function pop_solution(idx){
+  let target_popup = document.querySelector(`.popup_solution${idx}`);
+  target_popup.classList.add('on' )
+}
+
+
+/* popup */
+function close_popup(target){
+  let target_popup = target.closest('.popup');
+  target_popup.classList.remove('on');
+}

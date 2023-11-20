@@ -140,15 +140,376 @@
                             서버와 온도 기록 장치간 데이터 동기화를 통해 끊김없는 온도 이력 관리로 운송 및 보관 과정에서 제품의 안전성을 담보할 수 있습니다.
                         </p>
                     </div>
-                    <div class="btn_sort_box d_flex jc_c">
-                        <button type="button" class="btn _tab on" data-value="lte" onclick="solution_sort_change('lte')">a</button>
-                        <button type="button" class="btn _tab" data-value="ble" onclick="solution_sort_change('ble')">b</button>
-                        <button type="button" class="btn _tab" data-value="lte블루투스" onclick="solution_sort_change('lte블루투스')">c</button>
+                    <div class=" solution_list_page">
+                        
                     </div>
                     <div class="solution_list">
+                        
                         <div class="swiper-wrapper">
                             <div class="solution_item swiper-slide">
+                                <div class="img_box">
+                                    <img src="../assets/img/solution_lte.png" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <div class="sec_tit ty2">
+                                        <h3 class="tit2">LTE logger</h3>   
+                                    </div>
+                                    <ul class="solution_feature">
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico1.svg" alt=""></div>
+                                            <p class="desc">저전력 LTE 통신기술로 온도데이터를 직접 서버로 전송하여 실시간 모니터링 가능</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico2.svg" alt=""></div>
+                                            <p class="desc">보관시설과 같이 인터넷 연결이 어려운 환경에 설치 용이</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico3.svg" alt=""></div>
+                                            <p class="desc">통신장애시 NFC를 통해 온도 데이터 추출 및 기록 기능 지원</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico4.svg" alt=""></div>
+                                            <p class="desc">사용자 친화적인 GUI(그래픽 사용자 환경)으로 고객의 편의성 확대</p>
+                                        </li>
+                                    </ul>
+                                    <div class="solution_btns">
+                                        <button type="button" onclick="pop_solution(1)" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
+                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="solution_item swiper-slide">
+                                <div class="img_box">
+                                    <img src="../assets/img/solution_lte.png" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <div class="sec_tit ty2">
+                                        <h3 class="tit2">LTE logger</h3>   
+                                    </div>
+                                    <ul class="solution_feature">
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico1.svg" alt=""></div>
+                                            <p class="desc">저전력 LTE 통신기술로 온도데이터를 직접 서버로 전송하여 실시간 모니터링 가능</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico2.svg" alt=""></div>
+                                            <p class="desc">보관시설과 같이 인터넷 연결이 어려운 환경에 설치 용이</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico3.svg" alt=""></div>
+                                            <p class="desc">통신장애시 NFC를 통해 온도 데이터 추출 및 기록 기능 지원</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico4.svg" alt=""></div>
+                                            <p class="desc">사용자 친화적인 GUI(그래픽 사용자 환경)으로 고객의 편의성 확대</p>
+                                        </li>
+                                    </ul>
+                                    <div class="solution_btns">
+                                        <button type="button" onclick="pop_solution(2)" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
+                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="solution_item swiper-slide">
+                                <div class="img_box">
+                                    <img src="../assets/img/solution_lte.png" alt="">
+                                </div>
+                                <div class="txt_box">
+                                    <div class="sec_tit ty2">
+                                        <h3 class="tit2">LTE logger</h3>   
+                                    </div>
+                                    <ul class="solution_feature">
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico1.svg" alt=""></div>
+                                            <p class="desc">저전력 LTE 통신기술로 온도데이터를 직접 서버로 전송하여 실시간 모니터링 가능</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico2.svg" alt=""></div>
+                                            <p class="desc">보관시설과 같이 인터넷 연결이 어려운 환경에 설치 용이</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico3.svg" alt=""></div>
+                                            <p class="desc">통신장애시 NFC를 통해 온도 데이터 추출 및 기록 기능 지원</p>
+                                        </li>
+                                        <li class="col_item solution_feature_item">
+                                            <div class="ico_box"><img src="../assets/img/solution_ico4.svg" alt=""></div>
+                                            <p class="desc">사용자 친화적인 GUI(그래픽 사용자 환경)으로 고객의 편의성 확대</p>
+                                        </li>
+                                    </ul>
+                                    <div class="solution_btns">
+                                        <button type="button" onclick="pop_solution(3)" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
+                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="solution_btn_nav solution_list_prev"></button>
+                        <button type="button" class="solution_btn_nav solution_list_next"></button>
 
+                    </div>
+                    <div class="popup popup_solution popup_solution1">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner">
+                                    <button class="btn_popup_close ty2" onclick="close_popup(this)"></button>
+                                    <div class="popup_solution_cont">
+                                        <div class="popup_solution_img">
+                                            <img src="../assets/img/solution_lte.png" alt="">
+                                        </div>
+                                        <div class="popup_solution_txt">
+                                            <div class="sec_tit ty3">
+                                                <h3 class="tit2">LTE Logger</h3>
+                                            </div>
+                                            <ul class="popup_solution_feature">
+                                                <li>LTE-M 기술로 온도 데이터를 직접 서버 전송하여 실시간 모니터링이 가능</li>
+                                                <li>통신 장비 설치 및 연결이 어려운 병원과 관공서(보건소) 등 보관 시설 설치에 용이</li>
+                                                <li>물류 대행 및 택배 배송 사이 문제가 되었던 배송 도착 완료 기능 지원</li>
+                                                <li>버튼으로 배송 출발 및 도착 입력</li>
+                                                <li>통신 장애시 NFC, BLE를 통해 온도 데이터 추출 및 기록 기능 지원</li>
+                                                <li>사용자 친화적인 그래픽 사용자 환경(GUI)으로 고객의 편의성 확대</li>
+                                            </ul>
+                                            <ul class="popup_solution_detail">
+                                                <li class="item">
+                                                    <strong class="item_tit">특징</strong>
+                                                    <div class="item_desc">
+                                                        실시간 온도전송 (LTE,  BLE) <br>
+                                                        백업온도 전송 :  NFC <br>
+                                                        플렉시블한 데이터 로깅 및 전송 주기 <br>
+                                                        BLE 게이트웨이 <br>
+                                                        차량 위치 추적
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 범위</strong>
+                                                    <div class="item_desc">
+                                                        -40~120℃, 오차범위(max) +/-0.5도(-10~70도), 이외 +/-1도
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도데이터 저장</strong>
+                                                    <div class="item_desc">
+                                                        16,000 point
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 주기</strong>
+                                                    <div class="item_desc">
+                                                        0초~24시간
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">습도 오차범위(max)</strong>
+                                                    <div class="item_desc">
+                                                        +/-4%RH(10~90%), 이외 +/-7%RH
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리사용시간**</strong>
+                                                    <div class="item_desc">
+                                                        완충 시 85일 사용(60분 간격 데이터 전송)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리</strong>
+                                                    <div class="item_desc">
+                                                        리튬폴리머(3.7V), 충전식(USB-C type)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">사이즈</strong>
+                                                    <div class="item_desc">
+                                                        120x71x18mm
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">무게</strong>
+                                                    <div class="item_desc">
+                                                        130g
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <p class="fz_5 mt10">**사용환경이나 조건에 따라 다를 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup popup_solution popup_solution2">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner">
+                                    <button class="btn_popup_close ty2" onclick="close_popup(this)"></button>
+                                    <div class="popup_solution_cont">
+                                        <div class="popup_solution_img">
+                                            <img src="../assets/img/solution_lte.png" alt="">
+                                        </div>
+                                        <div class="popup_solution_txt">
+                                            <div class="sec_tit ty3">
+                                                <h3 class="tit2">BLE</h3>
+                                            </div>
+                                            <ul class="popup_solution_feature">
+                                                <li>LTE-M 기술로 온도 데이터를 직접 서버 전송하여 실시간 모니터링이 가능</li>
+                                                <li>통신 장비 설치 및 연결이 어려운 병원과 관공서(보건소) 등 보관 시설 설치에 용이</li>
+                                                <li>물류 대행 및 택배 배송 사이 문제가 되었던 배송 도착 완료 기능 지원</li>
+                                                <li>버튼으로 배송 출발 및 도착 입력</li>
+                                                <li>통신 장애시 NFC, BLE를 통해 온도 데이터 추출 및 기록 기능 지원</li>
+                                                <li>사용자 친화적인 그래픽 사용자 환경(GUI)으로 고객의 편의성 확대</li>
+                                            </ul>
+                                            <ul class="popup_solution_detail">
+                                                <li class="item">
+                                                    <strong class="item_tit">특징</strong>
+                                                    <div class="item_desc">
+                                                        실시간 온도전송 (LTE,  BLE) <br>
+                                                        백업온도 전송 :  NFC <br>
+                                                        플렉시블한 데이터 로깅 및 전송 주기 <br>
+                                                        BLE 게이트웨이 <br>
+                                                        차량 위치 추적
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 범위</strong>
+                                                    <div class="item_desc">
+                                                        -40~120℃, 오차범위(max) +/-0.5도(-10~70도), 이외 +/-1도
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도데이터 저장</strong>
+                                                    <div class="item_desc">
+                                                        16,000 point
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 주기</strong>
+                                                    <div class="item_desc">
+                                                        0초~24시간
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">습도 오차범위(max)</strong>
+                                                    <div class="item_desc">
+                                                        +/-4%RH(10~90%), 이외 +/-7%RH
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리사용시간**</strong>
+                                                    <div class="item_desc">
+                                                        완충 시 85일 사용(60분 간격 데이터 전송)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리</strong>
+                                                    <div class="item_desc">
+                                                        리튬폴리머(3.7V), 충전식(USB-C type)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">사이즈</strong>
+                                                    <div class="item_desc">
+                                                        120x71x18mm
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">무게</strong>
+                                                    <div class="item_desc">
+                                                        130g
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <p class="fz_5 mt10">**사용환경이나 조건에 따라 다를 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup popup_solution popup_solution3">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner">
+                                    <button class="btn_popup_close ty2" onclick="close_popup(this)"></button>
+                                    <div class="popup_solution_cont">
+                                        <div class="popup_solution_img">
+                                            <img src="../assets/img/solution_lte.png" alt="">
+                                        </div>
+                                        <div class="popup_solution_txt">
+                                            <div class="sec_tit ty3">
+                                                <h3 class="tit2">LTE+BLE</h3>
+                                            </div>
+                                            <ul class="popup_solution_feature">
+                                                <li>LTE-M 기술로 온도 데이터를 직접 서버 전송하여 실시간 모니터링이 가능</li>
+                                                <li>통신 장비 설치 및 연결이 어려운 병원과 관공서(보건소) 등 보관 시설 설치에 용이</li>
+                                                <li>물류 대행 및 택배 배송 사이 문제가 되었던 배송 도착 완료 기능 지원</li>
+                                                <li>버튼으로 배송 출발 및 도착 입력</li>
+                                                <li>통신 장애시 NFC, BLE를 통해 온도 데이터 추출 및 기록 기능 지원</li>
+                                                <li>사용자 친화적인 그래픽 사용자 환경(GUI)으로 고객의 편의성 확대</li>
+                                            </ul>
+                                            <ul class="popup_solution_detail">
+                                                <li class="item">
+                                                    <strong class="item_tit">특징</strong>
+                                                    <div class="item_desc">
+                                                        실시간 온도전송 (LTE,  BLE) <br>
+                                                        백업온도 전송 :  NFC <br>
+                                                        플렉시블한 데이터 로깅 및 전송 주기 <br>
+                                                        BLE 게이트웨이 <br>
+                                                        차량 위치 추적
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 범위</strong>
+                                                    <div class="item_desc">
+                                                        -40~120℃, 오차범위(max) +/-0.5도(-10~70도), 이외 +/-1도
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도데이터 저장</strong>
+                                                    <div class="item_desc">
+                                                        16,000 point
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">온도측정 주기</strong>
+                                                    <div class="item_desc">
+                                                        0초~24시간
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">습도 오차범위(max)</strong>
+                                                    <div class="item_desc">
+                                                        +/-4%RH(10~90%), 이외 +/-7%RH
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리사용시간**</strong>
+                                                    <div class="item_desc">
+                                                        완충 시 85일 사용(60분 간격 데이터 전송)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">배터리</strong>
+                                                    <div class="item_desc">
+                                                        리튬폴리머(3.7V), 충전식(USB-C type)
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">사이즈</strong>
+                                                    <div class="item_desc">
+                                                        120x71x18mm
+                                                    </div>
+                                                </li>
+                                                <li class="item">
+                                                    <strong class="item_tit">무게</strong>
+                                                    <div class="item_desc">
+                                                        130g
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <p class="fz_5 mt10">**사용환경이나 조건에 따라 다를 수 있습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -309,15 +670,15 @@
                             <div class="ico_box"><img src="../assets/img/ico_value3.svg" alt=""></div>
                             <p class="desc">COVID-19 백신 <br> 통합 물류 시스템 구축 사업자 선정</p>
                         </li>
-                        <li class="col_item aniBox ani_bot delay_3">
+                        <li class="col_item aniBox ani_bot ">
                             <div class="ico_box"><img src="../assets/img/ico_value4.svg" alt=""></div>
                             <p class="desc">COVID-19 백신 <br> 통합 물류 시스템 구축 사업자 선정</p>
                         </li>
-                        <li class="col_item aniBox ani_bot delay_4">
+                        <li class="col_item aniBox ani_bot delay_1">
                             <div class="ico_box"><img src="../assets/img/ico_value5.svg" alt=""></div>
                             <p class="desc">COVID-19 백신 <br> 통합 물류 시스템 구축 사업자 선정</p>
                         </li>
-                        <li class="col_item aniBox ani_bot delay_5">
+                        <li class="col_item aniBox ani_bot delay_2">
                             <div class="ico_box"><img src="../assets/img/ico_value6.svg" alt=""></div>
                             <p class="desc">COVID-19 백신 <br> 통합 물류 시스템 구축 사업자 선정</p>
                         </li>
@@ -347,6 +708,56 @@
                 <p class="copy">&copy; 2023 엠투클라이드(주). 모든 권리 보유.</p>
             </div>
         </footer>
+
+
+        <div class="popup">
+            <div class="popup_inner">
+                <div class="popup_cont">
+                    <div class="popup_cont_inner">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laudantium!</p>
+                    </div>
+                    <button type="button" class="btn_popup_close"></button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="../assets/js/main.js"></script>
 </body>
