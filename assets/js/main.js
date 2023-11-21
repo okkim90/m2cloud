@@ -112,12 +112,14 @@ gsap.timeline({
 
 .to('.mv_slogan_item1', {opacity:1,y:0, duration:1, ease:'none', },0)
 .to({},{duration:1})
-.to('.mv_slogan_item1', {opacity:0,y:'-10%',duration:1, ease:'none',},1)
+.to('.mv_slogan_item1', {opacity:0,y:'-20%',duration:1, ease:'none',},1)
 .to('.mv_slogan_item2', {opacity:1,y:0, duration:1, ease:'none',},1)
 .to({},{duration:1})
-.to('.mv_slogan_item2', {opacity:0,y:'-10%',duration:1, ease:'none', },2)
+.to('.mv_slogan_item2', {opacity:0,y:'-20%',duration:1, ease:'none', },2)
 .to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
 .to({},{duration:1})
+.to('.mv_slogan_item3', {opacity:0,y:'-20%',duration:1, ease:'none', },3)
+
 
 
 
@@ -185,10 +187,10 @@ const timeline = gsap.timeline({
       start: "top top",
       //end: ()=> `+=${cover_img_h}`,
       end: "bottom bottom",
-      //pinSpacing: false,
+      pinSpacing: false,
       pinType: "fixed",
       //anticipatePin:1,
-      scrub:0.3,
+      scrub:1,
       pin: '.mv_txt_cont',
       //markers:true,
       invalidateOnRefresh:true,
@@ -200,12 +202,13 @@ timeline
 
 .to('.mv_txt_item1',{opacity:1,},0)
 .to({},{duration:1})
-.to('.mv_txt_item1',{opacity:0.15, duration:0.1},1)
+.to('.mv_txt_item1',{opacity:0.15,},1)
 .to('.mv_txt_item2', {opacity:1},1 )
 .to({},{duration:1})
-.to('.mv_txt_item2',{opacity:0.15, duration:0.1},2)
+.to('.mv_txt_item2',{opacity:0.15,},2)
 .to('.mv_txt_item3',{opacity:1},2 )
 .to({},{duration:1})
+
 
 
 
@@ -535,7 +538,12 @@ function gnb_link(sec){
 function open_popup(popup){
   //let target_popup = document.querySelector(`.popup_solution${idx}`);
   let target_popup = document.querySelector(`.${popup}`);
-  target_popup.classList.add('on' )
+  target_popup.classList.add('on' );
+
+  let video = target_popup.querySelector('video');
+  if(video){
+    video.play();
+  }
 }
 
 
@@ -543,4 +551,9 @@ function open_popup(popup){
 function close_popup(target){
   let target_popup = target.closest('.popup');
   target_popup.classList.remove('on');
+  let video = target_popup.querySelector('video');
+  if(video){
+    video.pause();
+    video.currentTime = 0;
+  }
 }

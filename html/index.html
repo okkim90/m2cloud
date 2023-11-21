@@ -48,7 +48,7 @@
                 </div>
                 <div class="mv_cont">
                     <div class="mv_tit">
-                        <div class="mv_tit_cont taC">Transparent & Intelligent <br> SCM Service</div>
+                        <div class="mv_tit_cont taC">남 탓을 할 수도 있다. <br> 우리는 남이니까.</div>
                     </div>
                     <div class="mv_slogan nav_pos1">
                         <div class="mv_slogan_cont">
@@ -174,7 +174,7 @@
                                     </ul>
                                     <div class="solution_btns">
                                         <button type="button" onclick="open_popup('popup_solution1')" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
-                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                        <button type="button" onclick="open_popup('popup_video1')" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
                                     </div>
                                 </div>
                                 
@@ -207,7 +207,7 @@
                                     </ul>
                                     <div class="solution_btns">
                                         <button type="button" onclick="open_popup('popup_solution2')" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
-                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                        <button type="button" onclick="open_popup('popup_video2')" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@
                                     </ul>
                                     <div class="solution_btns">
                                         <button type="button" onclick="open_popup('popup_solution3')" class="btn taC _ol has_ico">상세정보 <i class="btn_ico _plus"></i></button>
-                                        <button type="button" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
+                                        <button type="button" onclick="open_popup('popup_video3')" class="btn taC _black has_ico">영상보기 <i class="btn_ico _play"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -513,6 +513,44 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="popup popup_video popup_video1">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner"> 
+                                    <div class="popup_video_cont">
+                                        <video src="../assets/video/vid1.mp4" controls></video>
+                                    </div>
+                                </div>
+                                <button class="btn_popup_close" onclick="close_popup(this)"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup popup_video popup_video2">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner"> 
+                                    <div class="popup_video_cont">
+                                        <video src="../assets/video/vid2.mp4" controls></video>
+                                    </div>
+                                </div>
+                                <button class="btn_popup_close" onclick="close_popup(this)"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup popup_video popup_video3">
+                        <div class="popup_inner" onclick="close_popup(this)">
+                            <div class="popup_cont" onclick="event.stopPropagation()">
+                                <div class="popup_cont_inner"> 
+                                    <div class="popup_video_cont">
+                                        <video src="../assets/video/vid1.mp4" controls></video>
+                                    </div>
+                                </div>
+                                <button class="btn_popup_close" onclick="close_popup(this)"></button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <section class="sec certification bg_grey">

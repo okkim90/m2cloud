@@ -3703,7 +3703,7 @@ input::-webkit-search-results-decoration {
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
-  height: 300vh;
+  height: 240vh;
 }
 .mv_txt_tit {
   font-size: 20px;
@@ -3723,6 +3723,9 @@ input::-webkit-search-results-decoration {
 .mv_slogan {
   height: 300vh;
 }
+.mv_slogan_cont {
+  height: 100vh;
+}
 .mv_slogan_item {
   position: absolute;
   left: 0;
@@ -3730,13 +3733,13 @@ input::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   font-size: 50px;
   text-align: center;
   font-weight: bold;
   opacity: 0;
-  transform: translateY(10%);
+  transform: translateY(20%);
 }
 
 .hd_box {
@@ -4306,7 +4309,16 @@ input::-webkit-search-results-decoration {
 .popup_system_error .popup_cont_inner p {
   margin-top: 24px;
 }
-
+.popup_video .popup_cont {
+  width: 1090px;
+}
+.popup_video .popup_cont_inner {
+  background-color: transparent;
+}
+.popup_video .popup_cont video {
+  display: block;
+  width: 100%;
+}
 .solution_list {
   max-width: 1096px;
   margin: 0 auto;

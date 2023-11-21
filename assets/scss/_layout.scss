@@ -551,7 +551,7 @@
         text-align: center;
         font-weight: bold;
         line-height: 1.4;
-        height: 300vh;
+        height: 240vh;
         
         &_tit {
             font-size: 20px;
@@ -579,7 +579,9 @@
     // }
     &_slogan {
         height: 300vh;
-        
+        &_cont {
+            height: 100vh;
+        }
     }
     &_slogan_item  {
         position: absolute;
@@ -589,13 +591,13 @@
         align-items: center;
         justify-content: center;
         
-        height: 100vh;
+        height: 100%;
         width: 100%;
         font-size: 50px;
         text-align: center;
         font-weight: bold;
         opacity: 0;
-        transform: translateY(10%);
+        transform: translateY(20%);
         
         // transform: scale(0.5);
     }
@@ -1228,6 +1230,23 @@ inherits: false;
                     margin-top: 24px;
                 }
             }
+        }
+    }
+    &_video {
+
+        .popup_cont {
+            width: 1090px;
+            &_inner {
+                background-color: transparent;
+            }
+            video {
+                display: block;
+                width: 100%;
+                
+            }
+        }
+        &_cont {
+            //background-color: #000;
         }
     }
 }
