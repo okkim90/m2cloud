@@ -3694,7 +3694,7 @@ input::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 7vh;
+  font-size: 9vh;
   font-weight: bold;
   line-height: 1.1;
 }
