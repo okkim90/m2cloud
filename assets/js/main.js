@@ -92,26 +92,57 @@ gsap.timeline({
   duration:1
 });
 
+
+
+gsap.timeline({
+  scrollTrigger : {
+      trigger: '.mv_slogan',
+      start: "top top",
+      //end: ()=> `+=${cover_img_h}`,
+      end: "bottom bottom",
+      //pinSpacing: false,
+      pinType: "fixed",
+      anticipatePin:1,
+      scrub:1,
+      pin: '.mv_slogan_cont',
+      //markers:true,
+      invalidateOnRefresh:true
+  },
+})
+
+.to('.mv_slogan_item1', {opacity:1,y:0, duration:1, ease:'none', },0)
+.to({},{duration:1})
+.to('.mv_slogan_item1', {opacity:0,y:'-10%',duration:1, ease:'none',},1)
+.to('.mv_slogan_item2', {opacity:1,y:0, duration:1, ease:'none',},1)
+.to({},{duration:1})
+.to('.mv_slogan_item2', {opacity:0,y:'-10%',duration:1, ease:'none', },2)
+.to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
+
+
+
+
+
+
 const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
-mv_slogan_item.forEach((e)=>{
-  gsap.timeline({
-    ease: 'power2.inOut',
-    scrollTrigger : {
-        trigger: e,
-        start: "top 100%",
-        end: "bottom 0",
-        scrub:true,
-    }
-  })
-  .to(e,{
-    opacity:1,
-    scale: 1
-  })
-  .to(e,{
-    opacity:0,
-    //scale: 0.5,
-  })
-});
+// mv_slogan_item.forEach((e)=>{
+//   gsap.timeline({
+//     ease: 'power2.inOut',
+//     scrollTrigger : {
+//         trigger: e,
+//         start: "top 100%",
+//         end: "bottom 0",
+//         scrub:true,
+//     }
+//   })
+//   .to(e,{
+//     opacity:1,
+//     scale: 1
+//   })
+//   .to(e,{
+//     opacity:0,
+//     //scale: 0.5,
+//   })
+// });
 
 
 
@@ -157,7 +188,7 @@ const timeline = gsap.timeline({
       //pinSpacing: false,
       pinType: "fixed",
       //anticipatePin:1,
-      scrub:1,
+      scrub:0.3,
       pin: '.mv_txt_cont',
       //markers:true,
       invalidateOnRefresh:true,
@@ -166,14 +197,17 @@ const timeline = gsap.timeline({
 });
 
 timeline
-.to('.mv_txt_item1',{opacity:1},0)
-.to('.mv_txt_item1',{opacity:1},0)
-.to('.mv_txt_item1',{opacity:0.15},1)
+
+.to('.mv_txt_item1',{opacity:1,},0)
+.to({},{duration:1})
+.to('.mv_txt_item1',{opacity:0.15, duration:0.1},1)
 .to('.mv_txt_item2', {opacity:1},1 )
-.to('.mv_txt_item2',{opacity:0.15},2)
+.to({},{duration:1})
+.to('.mv_txt_item2',{opacity:0.15, duration:0.1},2)
 .to('.mv_txt_item3',{opacity:1},2 )
-.to('.mv_txt_item3',{opacity:1},3 )
-.to('.mv_txt_item3',{opacity:1},3 )
+
+
+
 
 
 
