@@ -109,7 +109,7 @@ mv_slogan_item.forEach((e)=>{
   })
   .to(e,{
     opacity:0,
-    scale: 0.5,
+    //scale: 0.5,
   })
 });
 
@@ -491,13 +491,14 @@ function gnb_link(sec){
 }
 
 /* popup solutuion */ 
-function pop_solution(idx){
-  let target_popup = document.querySelector(`.popup_solution${idx}`);
+function open_popup(popup){
+  //let target_popup = document.querySelector(`.popup_solution${idx}`);
+  let target_popup = document.querySelector(`.${popup}`);
   target_popup.classList.add('on' )
 }
 
 
-/* popup */
+/* close popup */
 function close_popup(target){
   let target_popup = target.closest('.popup');
   target_popup.classList.remove('on');

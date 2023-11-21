@@ -289,7 +289,7 @@
 
 .footer {
     background-color: $c_fc;
-    padding: 100px 0;
+    padding: 60px 0 100px;
     color: #fff;
     
 
@@ -310,7 +310,7 @@
         }
     }
     &_info {
-        margin-top: 48px;
+        margin-top: 32px;
         font-size: 12px;
         display: flex;
         gap: 57px;
@@ -333,7 +333,7 @@
         }
     }
     .copy {
-        margin-top: 24px;
+        margin-top: 48px;
         font-size: 11px;
         color: #BABABA;
     }
@@ -500,6 +500,7 @@
     position: absolute;
     width: 100%;
     height: 100vh;
+    
     &_section {
         background-color: #000;
         font-size: 100px;
@@ -529,8 +530,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10vh;
+            font-size: 7vh;
             font-weight: bold;
+            line-height: 1.1;
         }
 
         
@@ -563,15 +565,15 @@
         // }
         opacity: 0.15;
     }
-    &_slogan {
-        padding-top: 25vh;
-    }
+    // &_slogan {
+    //     padding-top: 25vh;
+    // }
     &_slogan_item  {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 50vh;
-        font-size: 36px;
+        height: 100vh;
+        font-size: 50px;
         text-align: center;
         font-weight: bold;
         opacity: 0;
@@ -1191,6 +1193,19 @@ inherits: false;
                 }
                 &_desc {
                     flex: 1;
+                }
+            }
+        }
+    }
+    &_system_error {
+        .popup_cont {
+            width: 900px;
+
+            &_inner {
+                padding: 60px 90px;
+                
+                p {
+                    margin-top: 24px;
                 }
             }
         }
