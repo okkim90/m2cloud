@@ -3216,6 +3216,7 @@ input::-webkit-search-results-decoration {
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 60px;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.4s ease-in-out;
 }
@@ -3258,7 +3259,7 @@ input::-webkit-search-results-decoration {
   content: url(../img/logo_black.svg);
 }
 #header .nav {
-  margin-left: auto;
+  margin: 0 auto;
 }
 @media (max-width: 1024px) {
   #header .nav {
@@ -3384,7 +3385,6 @@ input::-webkit-search-results-decoration {
 }
 #header .lang {
   position: relative;
-  margin-left: 100px;
   /*
   &:hover {
       .lang_btn::after {
@@ -3449,7 +3449,7 @@ input::-webkit-search-results-decoration {
   height: 40px;
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .footer {

@@ -27,6 +27,7 @@
     color: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 60px;
     transition: 
         color .2s ease-in-out,
@@ -78,8 +79,8 @@
         }
     }
     .nav {
-        margin-left: auto;
-
+       
+        margin: 0 auto;
         @include tablet {
             position: fixed;
             right: 30px;
@@ -207,7 +208,7 @@
 
     .lang {
         position: relative;
-        margin-left: 100px;
+        
 
         &_ico {
             margin-right: 6px;
@@ -223,7 +224,7 @@
             height: 40px;
             display: flex;
             align-items: center;
-            font-size: 14px;
+            font-size: 12px;
             // &:after {
             //     content:'';
             //     border-left: 4px solid transparent;
