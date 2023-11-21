@@ -117,7 +117,7 @@ gsap.timeline({
 .to({},{duration:1})
 .to('.mv_slogan_item2', {opacity:0,y:'-10%',duration:1, ease:'none', },2)
 .to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
-
+.to({},{duration:1})
 
 
 
@@ -205,7 +205,7 @@ timeline
 .to({},{duration:1})
 .to('.mv_txt_item2',{opacity:0.15, duration:0.1},2)
 .to('.mv_txt_item3',{opacity:1},2 )
-
+.to({},{duration:1})
 
 
 
@@ -393,8 +393,8 @@ fixed_area.forEach((e)=>{
         end: "bottom bottom",
         pinSpacing: true,
         pinType: "fixed",
-        scrub:1,
-        anticipatePin:1,
+        scrub:0.1,
+        //anticipatePin:1,
         pin: fixed_area_bg,
         invalidateOnRefresh:true
     },
@@ -407,24 +407,31 @@ fixed_area.forEach((e)=>{
         end: "bottom bottom",
         pinSpacing: true,
         pinType: "fixed",
-        anticipatePin:1,
+       // anticipatePin:1,
         scrub:1,
         pin: fixed_area_cont,
         invalidateOnRefresh:true
     },
-  }).to(fixed_area_item[0],{
+  })
+
+  .to(fixed_area_item[0],{
     opacity:1,
-    y:0
-  }).to(fixed_area_item[1],{
+    y:0,
+    duration:1
+  })
+  
+  .to(fixed_area_item[1],{
     opacity:1,
-    y:0
-  }).to(fixed_area_item[2],{
+    y:0,
+    duration:1
+  })
+
+  .to(fixed_area_item[2],{
     opacity:1,
-    y:0
-  }).to(fixed_area_item[2],{
-    opacity:1,
-    y:0
-  });
+    y:0,
+    duration:1
+  })
+  .to({},{duration:1})
   
 });
 
