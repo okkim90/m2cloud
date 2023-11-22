@@ -85,21 +85,21 @@ $colors: (
     
 }
 
-$fz: (
-    1: 36px, 
-    2: 26px, 
-    3: 20px, 
-    4: 16px,
-    5: 14px 
-);
+// $fz: (
+//     1: 36px, 
+//     2: 26px, 
+//     3: 20px, 
+//     4: 16px,
+//     5: 14px 
+// );
 
 
-@each $key, $size in $fz {
-    .fz_#{$key} {
-        font-size: $size;
-    }
+// @each $key, $size in $fz {
+//     .fz_#{$key} {
+//         font-size: $size;
+//     }
     
-}
+// }
 
 
 

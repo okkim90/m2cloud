@@ -9,7 +9,7 @@ function setScreenSize() {
 }
 setScreenSize();
 
-var prevWidth = window.innerWidth;
+const prevWidth = window.innerWidth;
 // window.addEventListener('resize', ()=>{
 //     if (window.innerWidth !== prevWidth ) {
 //         prevWidth = window.innerWidth;
@@ -99,7 +99,7 @@ gsap.timeline({
       trigger: '.mv_slogan',
       start: "top top",
       //end: ()=> `+=${cover_img_h}`,
-      end: "bottom bottom",
+      end: "bottom center",
       //pinSpacing: false,
       pinType: "fixed",
       anticipatePin:1,
@@ -190,7 +190,7 @@ const timeline = gsap.timeline({
       pinSpacing: false,
       pinType: "fixed",
       //anticipatePin:1,
-      scrub:1,
+      scrub:0.3,
       pin: '.mv_txt_cont',
       //markers:true,
       invalidateOnRefresh:true,
@@ -200,13 +200,13 @@ const timeline = gsap.timeline({
 
 timeline
 
-.to('.mv_txt_item1',{opacity:1,},0)
+.to('.mv_txt_item1',{opacity:1, stagger:3},0)
 .to({},{duration:1})
-.to('.mv_txt_item1',{opacity:0.15,},1)
-.to('.mv_txt_item2', {opacity:1},1 )
+.to('.mv_txt_item1',{opacity:0.15, stagger:3},1)
+.to('.mv_txt_item2', {opacity:1,  stagger:3},1 )
 .to({},{duration:1})
-.to('.mv_txt_item2',{opacity:0.15,},2)
-.to('.mv_txt_item3',{opacity:1},2 )
+.to('.mv_txt_item2',{opacity:0.15, stagger:3},2)
+.to('.mv_txt_item3',{opacity:1,  stagger:3},2 )
 .to({},{duration:1})
 
 
@@ -557,3 +557,35 @@ function close_popup(target){
     video.currentTime = 0;
   }
 }
+
+
+let logistic_swiper = undefined;
+function init_logistic_swiper(){
+  let ww =  window.innerWidth;
+  //console.log(ww);
+  if(ww < 1025 && logistic_swiper == undefined){
+    logistic_swiper = new Swiper('.logistic_list',{
+      slidesPerView:2,
+      //loop:true,
+      spaceBetween: 16,
+      speed:400,
+      navigation: {
+        nextEl: '.logistic_list_next',
+        prevEl: '.logistic_list_prev',
+      },
+      breakpoints: {
+        767: {
+          slidesPerView: 1.3,
+          spaceBetween: 12
+        },
+      }
+    })
+  }else if(ww >= 1025 && logistic_swiper != undefined){
+    logistic_swiper.destroy();
+    logistic_swiper = undefined;
+  }
+}
+init_logistic_swiper();
+window.addEventListener('resize',()=>{
+  init_logistic_swiper()
+})

@@ -1,6 +1,31 @@
 
+
+@include tablet {
+    .pc_only {
+        display: none;
+    }
+}
+@include mobile {
+    .tb_only {
+        display: none;
+    }
+    .m_only {
+        display: block;
+    }
+}
+body {
+    @include tablet {
+        font-size: 14px;
+    }
+    @include mobile {
+        font-size: 13px;
+    }
+}
+
+
 #wrap {
     overflow: hidden;
+    
 }
 
 .inner {
@@ -32,7 +57,8 @@
     transition: 
         color .2s ease-in-out,
         background-color .2s ease-in-out,
-        transform .4s ease-in-out
+        transform .4s ease-in-out,
+        top .4s ease-in-out
     ;
     &.up {
         transform: translateY(-80px);
@@ -42,8 +68,10 @@
         justify-content: space-between;
         padding: 0 36px;
         height: 60px;
+        
         &.up {
-            transform: translateY(-60px);
+            transform: none;
+            top: -60px;
             
         }
     }
@@ -51,7 +79,7 @@
         height: 54px;
         padding: 0 24px;
         &.up {
-            transform: translateY(-54px);
+            top: -54px;
             
         }
     }
@@ -72,10 +100,10 @@
             content: url(../img/logo_black.svg);
         }
         @include tablet {  
-          
+            width: 88px;
         }
         @include mobile {  
-           
+            width: 72px;
         }
     }
     .nav {
@@ -394,6 +422,14 @@
 .sec {
     padding: 144px 0 164px;
     position: relative;
+
+
+    @include tablet {
+        padding: 86px 0 100px;
+    }
+    @include mobile {
+        padding: 60px 0;
+    }
     &.no_pd {
         padding: 0;
     }
@@ -402,26 +438,58 @@
     }
     &_tit {
         margin-bottom: 60px;
+        @include tablet { 
+            margin-bottom: 48px;
+        }
+        @include mobile { 
+            margin-bottom: 32px;
+        }
         .tit {
             font-size: 36px;
             font-weight: bold;
             line-height: 1.2;
+            @include tablet { 
+                font-size: 32px;
+            }
+            @include mobile { 
+                font-size: 26px;
+            }
         }
         .tit2 {
             font-size: 26px;
             font-weight: bold;
             line-height: 1.2;
+            @include tablet { 
+                font-size: 20px;
+            }
+            @include mobile { 
+                font-size: 18px;
+            }
         }
         .desc {
             font-size: 18px;
             margin-top: 16px;
             line-height: 1.6;
+            @include tablet { 
+                font-size: 16px;
+                margin-top: 12px;
+            }
+            @include mobile { 
+                font-size: 14px;
+                margin-top: 8px;
+            }
         }
         &.ty2 {
             margin-bottom: 48px;  
+            @include tablet { 
+                margin-bottom: 24px;
+            }
         }
         &.ty3 {
             margin-bottom: 24px;  
+            @include tablet { 
+                margin-bottom: 20px;
+            }
         }
     }
     
@@ -542,6 +610,11 @@
             font-size: 9vh;
             font-weight: bold;
             line-height: 1.1;
+
+            @include tablet {
+                font-size: 8vw;
+                line-height: 1.2;
+            }
         }
 
         
@@ -552,11 +625,27 @@
         font-weight: bold;
         line-height: 1.4;
         height: 240vh;
+
+        @include tablet {
+            font-size: 26px;
+            line-height: 1.6;
+        }
+        @include mobile {
+            font-size: 18px;
+        }
         
         &_tit {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 60px;
+            @include tablet {
+                font-size: 16px;
+                margin-bottom: 48px;
+            }
+            @include mobile {
+                font-size: 14px;
+                margin-bottom: 36px;
+            }
             
         }
         &_cont {
@@ -565,7 +654,18 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+           
         } 
+        &_item {
+            &_wrap {
+                padding: 0 24px;
+            }
+            @include mobile {
+                br {
+                    display: none;
+                }
+            }
+        }
         
     }
     &_fade {
@@ -600,6 +700,14 @@
         transform: translateY(20%);
         
         // transform: scale(0.5);
+
+        @include tablet {
+            font-size: 26px;
+        }
+        @include mobile {
+            font-size: 20px;
+            padding: 0 24px;
+        }
     }
 }
 
@@ -621,6 +729,12 @@
     width: 100%;
     position: relative;
     height: 600px;
+    @include tablet {
+        height: 340px;
+    }
+    @include mobile {
+        height: 200px;
+    }
 
     &_cv {
         position: absolute;
@@ -666,18 +780,49 @@
     font-size: 16px;
     display: inline-flex;
     align-items: center;
+    @include tablet { 
+        height: 44px;
+        line-height: 43px;
+        padding: 0 24px;
+        font-size: 14px;
+        border-radius: 22px;
+    }
+    @include mobile { 
+        height: 38px;
+        line-height: 37px;
+        padding: 0 22px;
+        font-size: 13px;
+        border-radius: 19px;
+    }
     &.has_ico {
         padding-right: 16px;
+        @include tablet { 
+           padding-right: 14px;
+        }
+        @include mobile { 
+            padding-right: 12px;
+         }
     }
     &.taC {
         justify-content: center;
     }
     &_ico {
         margin-left: 16px;
+        @include tablet {
+            margin-left: 14px;
+        }
+        @include mobile {
+            margin-left: 12px;
+        }
         &._plus {
             position: relative;
             width: 19px;
             height: 19px;
+            @include mobile {
+                width: 15px;
+                height: 14px;
+               
+            } 
             &::after, &::before {
                 transition: all .1s ease-in-out;
             }
@@ -690,6 +835,7 @@
                 top: 0;
                 margin-left: -1px;
                 position: absolute;
+                
             }
             &::after {
                 background-color: #000;
@@ -708,6 +854,11 @@
             background-image: url(../img/ico_play.svg);
             background-repeat: no-repeat;
             background-position: center center;
+            @include mobile {
+                width: 14px;
+                height: 14px;
+                background-size: cover;
+            } 
         }
     }
     &._black {
@@ -819,18 +970,44 @@ inherits: false;
     &_list {
         display: flex;
         gap: 24px;
+        @include tablet {  
+            @include flex_gap(2,16px,36px)
+        }
+        @include mobile {  
+            @include flex_gap(2,12px,16px)
+        }
     }
     &_item {
         .txt_box {
             margin-top: 24px;
+            @include tablet {  
+                margin-top: 16px;
+            }
+            @include mobile {  
+                margin-top: 12px;
+            }
             .tit {
                 display: block;
                 font-size: 20px;
                 line-height: 1.2;
+                @include tablet {  
+                    font-size: 18px;
+                }
+                @include mobile {  
+                    font-size: 14px;
+                }
             }
             .desc {
                 font-size: 16px;
                 margin-top: 12px;
+                @include tablet {  
+                    font-size: 14px;
+                    margin-top: 8px;
+                }
+                @include mobile {  
+                    font-size: 12px;
+                   
+                }
             }
         }
     }
@@ -841,6 +1018,12 @@ inherits: false;
    
     box-sizing: border-box;
     padding-top: 210px;
+    @include tablet {
+        padding-top: 160px;
+    }
+    @include mobile {
+        padding-top: 100px;
+    }
     .tech_text {
         position: relative;
         z-index: 99;
@@ -850,14 +1033,32 @@ inherits: false;
         &1 {
             font-size: 20px;
             margin-bottom: 1.2em;
+            @include tablet {
+                font-size: 16px;
+            }
+            @include mobile {
+                font-size: 14px;
+            }
         }
         &2 {
             font-size: 36px;
             margin-bottom: 1em;
             font-weight: bold;
+            @include tablet {
+                font-size: 32px;
+            }
+            @include mobile {
+                font-size: 26px;
+            }
         }
         &3 {
             font-size: 18px;
+            @include tablet {
+                font-size: 16px;
+            }
+            @include mobile {
+                font-size: 13px;
+            }
         }
     }
 }
@@ -893,18 +1094,47 @@ inherits: false;
 .certification {
     .txt_box {
         margin-top: 60px;
+        @include tablet {
+            margin-top: 48px;
+        }
+        @include mobile {
+            margin-top: 36px;
+        }
         .tit {
             display: block;
             font-size: 26px;
             margin-bottom: 16px;
+            @include tablet {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            @include mobile {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
         }
         p {
+            @include tablet {
+                font-size: 14px;
+            }
+            @include mobile {
+                font-size: 13px;
+            }
             & + p {
                 margin-top: 1.5em;
+                @include mobile {
+                    margin-top: 1.2em;
+                }
             }  
         }
         .btn {
             margin-top: 32px;
+            @include tablet {
+                margin-top: 24px;
+            }
+            @include mobile {
+                margin-top: 16px;
+            }
         }
     }
 }
@@ -918,22 +1148,56 @@ inherits: false;
             font-size: 26px;
             line-height: 1.4;
             font-weight: bold;
+            @include tablet {
+                font-size: 20px;
+            }
+            @include mobile {
+                font-size: 18px;
+                br {
+                    display: none;
+                }
+            }
         }
         
     }
     .vid_open_wrap {
         margin: 100px 0;
+        @include tablet {
+            margin: 60px 0;
+        }
+        @include mobile {
+            margin: 36px 0;
+        }
     }
     .txt_box {
         margin-top: 75px;
+        @include tablet {
+            margin-top: 48px;
+        }
+        @include mobile {
+            margin-top: 40px;
+        }
         p + p {
             margin-top: 24px;
+            
         }
         p + .btn {
             margin-top: 32px;
+            @include tablet {
+                margin-top: 24px;
+            }
+            @include mobile {
+                margin-top: 16px;
+            }
         }
         .btn + p {
             margin-top: 48px;
+            @include tablet {
+                margin-top: 36px;
+            }
+            @include mobile {
+                margin-top: 32px;
+            }
         }
     }
 
@@ -960,12 +1224,26 @@ inherits: false;
             font-size: 36px;
             font-weight: bold;
             line-height: 1;
+            @include tablet {
+                width: 118px;
+                font-size: 32px;
+            }
+            @include mobile {
+                width: 76px;
+                font-size: 26px;
+            }
             @at-root .counter.ty_big & {
                 font-size: 230px;
                 width: auto;
                 font-weight: bold;
                 line-height: 1.2;
                 letter-spacing: -0.07em;
+                @include tablet {
+                    font-size: 140px;
+                }
+                @include mobile {
+                    font-size: 21vw;
+                }
             }
         }
         
@@ -975,12 +1253,16 @@ inherits: false;
         flex: 1;
 
         height: 12px;
-        background-color: #eee;
+        background-color: $c_bg_grey;
         position: relative;
         border-radius: 6px;
         overflow: hidden;
+        @include tablet {
+            height: 10px;
+            border-radius: 5px;
+        }
         &_bar {
-            border-radius: 6px;
+            border-radius: 5px;
             position: absolute;
             background: rgb(0,159,209);
             background: linear-gradient(90deg, rgba(0,159,209,1) 0%, rgba(23,0,116,1) 100%);
@@ -994,9 +1276,26 @@ inherits: false;
 .logistic {
     .inner_sec {
         margin-top: 100px;
+        @include tablet {
+            margin-top: 60px;
+        }
+        @include mobile {
+            margin-top: 36px;
+        }
     }
     &_list {
-        @include flex_gap (3, 24px, 0)
+        position: relative;
+        .swiper-wrapper {
+            @include flex_gap (3, 24px, 0);
+            flex-wrap: nowrap;
+            @include tablet {
+                gap: 0;
+                .col_item {
+                   width: auto;
+                }
+            }
+        }
+        
     }
     &_card {
         background-color: #fff;
@@ -1006,13 +1305,31 @@ inherits: false;
         position: relative;
         cursor: pointer;
         transition: background-color .2s ease-in-out;
-    
+        @include tablet {
+            height: 332px;
+            padding: 40px;
+        }
+        @include mobile {
+            height: 280px;
+            padding: 24px;
+        }
+        
         .ico_box {
             height: 48px;
             display: block;
             margin-bottom: 24px;
             transition: all .2s ease-in-out;
             overflow: hidden;
+            @include tablet {
+                height: 36px;
+                margin-bottom: 12px;
+                img {
+                    height: 100%;
+                }
+            }
+            @include mobile {
+                height: 28px;
+            }
         }
         .tit {
             display: block;
@@ -1021,12 +1338,22 @@ inherits: false;
             letter-spacing: -0.4px;
             transition: color .2s ease-in-out;
             margin-bottom: 12px;
+
+            @include tablet {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+            @include mobile {
+                font-size: 16px;
+               
+            }
         }
         .desc {
             visibility: hidden;
             overflow: hidden;
             max-height: 0;
             transition: all .2s ease-in-out;
+            
         }
         .card_btn {
             position: absolute;
@@ -1037,6 +1364,18 @@ inherits: false;
             border: 1px solid #000;
             border-radius: 50%;
             transition: all .2s ease-in-out;
+            @include tablet {
+                width: 36px;
+                height: 36px;
+                right: 26px;
+                bottom: 26px;
+            }
+            @include mobile {
+                width: 32px;
+                height: 32px;
+                right: 12px;
+                bottom: 12px;
+            }
             &::after {
                 content: '';
                 position: absolute;
@@ -1047,6 +1386,10 @@ inherits: false;
                 top: 50%;
                 margin-top: -9px;
                 transition: background-color .2s ease-in-out;
+                @include mobile {
+                    height: 13px;
+                    margin-top: -6px;
+                }
             }
             &::before {
                 content: '';
@@ -1057,6 +1400,10 @@ inherits: false;
                 left: 50%;
                 top: 50%;
                 margin-left: -9px;
+                @include mobile {
+                    width: 13px;
+                    margin-left: -6px;
+                }
                 
                 transition: background-color .2s ease-in-out;
             }
@@ -1088,15 +1435,52 @@ inherits: false;
     &_list {
         margin-top: 100px;
         @include flex_gap(3, 24px, 100px);
+
+        @include tablet {
+            margin-top: 60px;
+            @include flex_gap(2, 16px, 36px);
+        }
+        @include mobile {
+            margin-top: 32px;
+            @include flex_gap(2, 12px, 28px);
+        }
         li {
             text-align: center;
             .ico_box {
                 height: 50px;
+                @include tablet {
+                    height: 36px;
+                    img {
+                        height: 100%;
+                    }
+                }
+                @include mobile {
+                    height: 28px;
+                }
             }
+            @include tablet {
+                &.aniBox.gogo {
+                    transition-delay: 0s;
+                }
+               
+            }
+            
             .desc {
                 margin-top: 24px;
                 font-weight: bold;
                 font-size: 20px;
+                @include tablet {
+                    font-size: 16px;
+                    margin-top: 18px;
+                    line-height: 1.5;
+                }
+                @include mobile {
+                    font-size: 13px;
+                    margin-top: 16px;
+                    br {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -1163,6 +1547,12 @@ inherits: false;
                 right: 36px;
                 top: 36px;
                 margin-top: 0;
+                @include tablet {
+                    width: 32px;
+                    height: 32px;
+                    right: 24px;
+                    top: 24px;
+                }
             }
         }
     }
@@ -1174,7 +1564,9 @@ inherits: false;
 
             &_inner {
                 padding: 60px 90px;
-                
+                @include tablet {
+                    padding: 60px 46px;
+                }
                 
             }
         }
@@ -1186,9 +1578,19 @@ inherits: false;
             width: 100px;
             flex-shrink: 0;
             margin-right: 70px;
+            @include tablet {
+                margin-right: 36px;
+            }
         }
         &_txt {
             flex: 1;
+            .tbl_info {
+                font-size: 14px;
+                margin-top: 10px;
+                @include tablet {
+                    font-size: 12px;
+                }
+            }
         }
         &_feature {
             li {
@@ -1204,6 +1606,11 @@ inherits: false;
             line-height: 1.7;
             border-top: 1px solid #000;
             margin-top: 48px;
+            @include tablet {
+                font-size: 12px;
+                line-height: 1.6;
+                margin-top: 36px;
+            }
             .item {
                 border-bottom: 1px solid #000;
                 padding: 12px 0;
@@ -1212,6 +1619,9 @@ inherits: false;
                 &_tit {
                     width: 148px;
                     flex-shrink: 0;
+                    @include tablet {
+                        width: 122px;
+                    }
                 }
                 &_desc {
                     flex: 1;
@@ -1225,9 +1635,20 @@ inherits: false;
 
             &_inner {
                 padding: 60px 90px;
-                
+                @include tablet {
+                    padding: 60px 46px;
+                }
                 p {
                     margin-top: 24px;
+                    @include tablet {
+                        margin-top: 16px;
+                        
+                    }
+                    @include mobile {
+                        br {
+                            display: none;
+                        }
+                    }
                 }
             }
         }
@@ -1245,9 +1666,7 @@ inherits: false;
                 
             }
         }
-        &_cont {
-            //background-color: #000;
-        }
+        
     }
 }
 
@@ -1261,9 +1680,34 @@ inherits: false;
             gap: 12px;
             justify-content: center;
             margin-bottom: 60px;
+            @include tablet {
+                margin-bottom: 36px;
+            }
+            @include mobile {
+                gap: 8px;
+                margin-bottom: 24px;
+            }
             .btn {
                 width: auto;
                 opacity: 1;
+                font-size: 20px;
+                height: 56px;
+                line-height: 55px;
+                border-radius: 28px;
+                padding: 0 36px;
+                @include tablet {
+                    height: 48px;
+                    line-height: 47px;
+                    border-radius: 24px;
+                    padding: 0 32px;
+                }
+                @include mobile {
+                    height: 40px;
+                    line-height: 39px;
+                    border-radius: 20px;
+                    padding: 0 28px;
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -1273,26 +1717,73 @@ inherits: false;
         display: flex;
         opacity: 0.3;
         transition: opacity .2s ease-in-out;
+        @include tablet {
+            padding: 60px 48px;
+        }
+        @include mobile {
+            display: block;
+            padding: 36px 24px;
+            border-radius: 12px;
+            .txt_box {
+                margin-top: 32px;
+                .sec_tit {
+                    text-align: center;
+                }
+            }
+        }
         &.swiper-slide-active {
             opacity: 1;
         }
         .img_box {
             width: 200px;
             margin-right: 100px;
-            flex-shrink: 0
+            flex-shrink: 0;
+            @include tablet {
+                width: 143px;
+                margin-right: 60px;
+            }
+            @include mobile {
+                width: 100%;
+                margin-right: 0;
+                text-align: center;
+                img {
+                    width: 122px;
+                }
+            }
         }
+        
     }
     &_feature {
         @include flex_gap(2, 40px, 48px);
+        @include tablet {
+            @include flex_gap(2, 18px, 36px);
+        }
+        @include mobile {
+            @include flex_gap(2, 12px, 24px);
+        }
         &_item {
             display: flex;
+            @include mobile {
+                display: block;
+            }
             .ico_box {
                 width: 36px;
                 flex-shrink: 0;
                 margin-right: 28px;
+                @include tablet { 
+                    width: 27px;
+                    margin-right: 12px;
+                }
             }
             .desc {
                 flex: 1;
+                @include tablet {
+                    font-size: 13px;
+                }
+                @include mobile {
+                    margin-top: 10px;
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -1300,32 +1791,66 @@ inherits: false;
         margin-top: 60px;
         display: flex;
         gap: 16px;
+        @include tablet { 
+            margin-top: 48px;
+        }
+        @include mobile { 
+            margin-top: 32px;
+            gap: 12px;
+            justify-content: center;
+        }
     }
-    &_btn_nav {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #e7e7e7 ;
-        position: absolute;
-        z-index: 10;
-        top: 50%;
-        margin-top: -24px;
-        background-repeat: no-repeat;
-        background-position: 55% center;
-        background-image: url(../img/ico_nav_arrow.svg);
-        &.swiper-button-disabled {
-            opacity: 0;
-            visibility: hidden;
+    
+}
+
+
+.swiper_ctrl_btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e7e7e7 ;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    margin-top: -24px;
+    background-repeat: no-repeat;
+    background-position: 55% center;
+    background-image: url(../img/ico_nav_arrow.svg);
+    @include tablet {
+        width: 44px;
+        height: 44px;
+        margin-top: -22px;
+    }
+    @include mobile {
+        display: none;
+        width: 36px;
+        height: 36px;
+        margin-top: -18px;
+    }
+    &.swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover {
+        background-color: #d2d2d2;
+    }
+    &.prev {
+        left: -24px;
+        transform: rotate(180deg);
+        @include tablet {
+            left: -22px;
         }
-        &:hover {
-            background-color: #d2d2d2;
+        @include mobile {
+            left: -18px;
         }
-        &.solution_list_prev {
-            left: -24px;
-            transform: rotate(180deg);
+    }
+    &.next {
+        right: -24px;
+        @include tablet {
+            right: -22px;
         }
-        &.solution_list_next {
-            right: -24px;
+        @include mobile {
+            right: -18px;
         }
     }
 }
