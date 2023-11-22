@@ -3165,6 +3165,10 @@ input::-webkit-search-results-decoration {
 }
 
 /* layout*/
+.m_only {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .pc_only {
     display: none;
@@ -3786,7 +3790,6 @@ input::-webkit-search-results-decoration {
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
-  height: 240vh;
 }
 @media (max-width: 1024px) {
   .mv_txt {
@@ -4520,6 +4523,14 @@ input::-webkit-search-results-decoration {
   }
   .logistic_list .swiper-wrapper .col_item {
     width: auto;
+  }
+}
+.logistic_list .swiper_ctrl_btn {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .logistic_list .swiper_ctrl_btn {
+    display: block;
   }
 }
 .logistic_card {

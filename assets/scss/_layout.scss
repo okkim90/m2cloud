@@ -1,6 +1,11 @@
 
 
+
+ .m_only {
+    display: none;
+}
 @include tablet {
+    
     .pc_only {
         display: none;
     }
@@ -624,7 +629,7 @@ body {
         text-align: center;
         font-weight: bold;
         line-height: 1.4;
-        height: 240vh;
+        //height: 100vh;
 
         @include tablet {
             font-size: 26px;
@@ -1293,6 +1298,12 @@ inherits: false;
                 .col_item {
                    width: auto;
                 }
+            }
+        }
+        .swiper_ctrl_btn {
+            display: none;
+            @include tablet {
+                display: block;
             }
         }
         

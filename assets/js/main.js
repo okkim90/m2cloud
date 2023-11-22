@@ -73,6 +73,10 @@ function hasScrolled(){
 
  
 
+gsap.registerPlugin(ScrollTrigger);
+
+let mm = gsap.matchMedia();
+
 gsap.timeline({
   scrollTrigger : {
       trigger: mv_section,
@@ -92,122 +96,167 @@ gsap.timeline({
   duration:1
 });
 
-
-
-gsap.timeline({
-  scrollTrigger : {
-      trigger: '.mv_slogan',
-      start: "top top",
-      //end: ()=> `+=${cover_img_h}`,
-      end: "bottom center",
-      //pinSpacing: false,
-      pinType: "fixed",
-      anticipatePin:1,
-      scrub:1,
-      pin: '.mv_slogan_cont',
-      //markers:true,
-      invalidateOnRefresh:true
-  },
-})
-
-.to('.mv_slogan_item1', {opacity:1,y:0, duration:1, ease:'none', },0)
-.to({},{duration:1})
-.to('.mv_slogan_item1', {opacity:0,y:'-20%',duration:1, ease:'none',},1)
-.to('.mv_slogan_item2', {opacity:1,y:0, duration:1, ease:'none',},1)
-.to({},{duration:1})
-.to('.mv_slogan_item2', {opacity:0,y:'-20%',duration:1, ease:'none', },2)
-.to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
-.to({},{duration:1})
-.to('.mv_slogan_item3', {opacity:0,y:'-20%',duration:1, ease:'none', },3)
-
-
-
-
-
-
 const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
-// mv_slogan_item.forEach((e)=>{
-//   gsap.timeline({
-//     ease: 'power2.inOut',
-//     scrollTrigger : {
-//         trigger: e,
-//         start: "top 100%",
-//         end: "bottom 0",
-//         scrub:true,
-//     }
-//   })
-//   .to(e,{
-//     opacity:1,
-//     scale: 1
-//   })
-//   .to(e,{
-//     opacity:0,
-//     //scale: 0.5,
-//   })
-// });
-
-
-
-gsap.to('.mv_tit_cont',{
-  opacity:0,
-  duration:1,
-  scale: 1.5,
-  ease: 'power2.inOut',
-  scrollTrigger : {
-      trigger: '.mv_tit',
-      start: "top top",
-      end: "bottom top",
-      pinType: "fixed",
-      scrub:0.1,
-      pin: '.mv_tit_cont',
-      invalidateOnRefresh:true
-  },
-});
 const mv_fade = document.querySelectorAll('.mv_fade');
 
-gsap.to('.mv_txt',{
-  opacity:1,
-  //y:0,
-  ease: 'power2.inOut',
-  scrollTrigger : {
-      trigger: '.mv_txt',
-      start: "top center",
 
-      end: "center center",
-      scrub: 1,
-      invalidateOnRefresh:true,
-      //markers: true,
-  },
+mm.add("(min-width: 1025px)", () => {
+  gsap.timeline({
+    scrollTrigger : {
+        trigger: '.mv_slogan',
+        start: "top top",
+        //end: ()=> `+=${cover_img_h}`,
+        end: "bottom center",
+        //pinSpacing: false,
+        pinType: "fixed",
+        anticipatePin:1,
+        scrub:1,
+        pin: '.mv_slogan_cont',
+        //markers:true,
+        invalidateOnRefresh:true
+    },
+  })
+  .to('.mv_slogan_item1', {opacity:1,y:0, duration:1, ease:'none', },0)
+  .to({},{duration:1})
+  .to('.mv_slogan_item1', {opacity:0,y:'-20%',duration:1, ease:'none',},1)
+  .to('.mv_slogan_item2', {opacity:1,y:0, duration:1, ease:'none',},1)
+  .to({},{duration:1})
+  .to('.mv_slogan_item2', {opacity:0,y:'-20%',duration:1, ease:'none', },2)
+  .to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
+  .to({},{duration:1})
+  .to('.mv_slogan_item3', {opacity:0,y:'-20%',duration:1, ease:'none', },3)
+
+  gsap.to('.mv_tit_cont',{
+    opacity:0,
+    duration:1,
+    scale: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger : {
+        trigger: '.mv_tit',
+        start: "top top",
+        end: "bottom top",
+        pinType: "fixed",
+        scrub:0.1,
+        pin: '.mv_tit_cont',
+        invalidateOnRefresh:true
+    },
+  });
+  
+  
+  gsap.to('.mv_txt',{
+    opacity:1,
+    //y:0,
+    ease: 'power2.inOut',
+    scrollTrigger : {
+        trigger: '.mv_txt',
+        start: "top center",
+  
+        end: "center center",
+        scrub: 1,
+        invalidateOnRefresh:true,
+        //markers: true,
+    },
+  })
+
+  
+
+
+  /*  */
+const fixed_area = document.querySelectorAll('.fixed_area');
+
+fixed_area.forEach((e)=>{
+  const fixed_area_bg = e.querySelector('.fixed_area_bg');
+  const fixed_area_cont = e.querySelector('.fixed_area_cont');
+  const fixed_area_item = e.querySelectorAll('.fixed_area_item');
+  gsap.timeline({
+    
+    scrollTrigger : {
+        trigger: e,
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: true,
+        pinType: "fixed",
+        scrub:0.1,
+        //anticipatePin:1,
+        pin: fixed_area_bg,
+        invalidateOnRefresh:true
+    },
+  });
+
+  gsap.timeline({
+    scrollTrigger : {
+        trigger: e,
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: true,
+        pinType: "fixed",
+       // anticipatePin:1,
+        scrub:1,
+        pin: fixed_area_cont,
+        invalidateOnRefresh:true
+    },
+  })
+
+  .to(fixed_area_item[0],{
+    opacity:1,
+    y:0,
+    duration:1
+  })
+  
+  .to(fixed_area_item[1],{
+    opacity:1,
+    y:0,
+    duration:1
+  })
+
+  .to(fixed_area_item[2],{
+    opacity:1,
+    y:0,
+    duration:1
+  })
+  .to({},{duration:1})
+  
+});
+  
 })
+
+
+
+
+
+
+
+
+
+
 
 const timeline = gsap.timeline({
   
   scrollTrigger : {
       trigger: '.mv_txt',
-      start: "top top",
+      start: "5% center",
       //end: ()=> `+=${cover_img_h}`,
-      end: "bottom bottom",
-      pinSpacing: false,
-      pinType: "fixed",
+      end: "75% center",
+      // pinSpacing: false,
+      // pinType: "fixed",
       //anticipatePin:1,
       scrub:0.3,
-      pin: '.mv_txt_cont',
+      //pin: '.mv_txt_cont',
       //markers:true,
       invalidateOnRefresh:true,
       //yoyo: true,
   },
 });
 
-timeline
+timeline.to('.mv_txt_item1',{opacity:1, },0)
+//.to({},{duration:1})
+.to('.mv_txt_item1',{opacity:0.15, },1)
+.to('.mv_txt_item2', {opacity:1,  },1 )
+//.to({},{duration:1})
+.to('.mv_txt_item2',{opacity:0.15,},2)
+.to('.mv_txt_item3',{opacity:1,  },2 )
+//.to({},{duration:1})
 
-.to('.mv_txt_item1',{opacity:1, stagger:3},0)
-.to({},{duration:1})
-.to('.mv_txt_item1',{opacity:0.15, stagger:3},1)
-.to('.mv_txt_item2', {opacity:1,  stagger:3},1 )
-.to({},{duration:1})
-.to('.mv_txt_item2',{opacity:0.15, stagger:3},2)
-.to('.mv_txt_item3',{opacity:1,  stagger:3},2 )
-.to({},{duration:1})
 
 
 
@@ -381,62 +430,7 @@ counter.forEach((e, i)=>{
 
 
 
-/*  */
-const fixed_area = document.querySelectorAll('.fixed_area');
 
-fixed_area.forEach((e)=>{
-  const fixed_area_bg = e.querySelector('.fixed_area_bg');
-  const fixed_area_cont = e.querySelector('.fixed_area_cont');
-  const fixed_area_item = e.querySelectorAll('.fixed_area_item');
-  gsap.timeline({
-    
-    scrollTrigger : {
-        trigger: e,
-        start: "top top",
-        end: "bottom bottom",
-        pinSpacing: true,
-        pinType: "fixed",
-        scrub:0.1,
-        //anticipatePin:1,
-        pin: fixed_area_bg,
-        invalidateOnRefresh:true
-    },
-  });
-
-  gsap.timeline({
-    scrollTrigger : {
-        trigger: e,
-        start: "top top",
-        end: "bottom bottom",
-        pinSpacing: true,
-        pinType: "fixed",
-       // anticipatePin:1,
-        scrub:1,
-        pin: fixed_area_cont,
-        invalidateOnRefresh:true
-    },
-  })
-
-  .to(fixed_area_item[0],{
-    opacity:1,
-    y:0,
-    duration:1
-  })
-  
-  .to(fixed_area_item[1],{
-    opacity:1,
-    y:0,
-    duration:1
-  })
-
-  .to(fixed_area_item[2],{
-    opacity:1,
-    y:0,
-    duration:1
-  })
-  .to({},{duration:1})
-  
-});
 
 
 
