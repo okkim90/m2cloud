@@ -81,13 +81,8 @@ gsap.timeline({
   scrollTrigger : {
       trigger: '.mv_area',
       start: "top top",
-      //end: ()=> `+=${cover_img_h}`,
       end: "bottom bottom",
-      pinSpacing: false,
-      pinType: "fixed",
-      //anticipatePin:1,
       scrub:1,
-      pin: '.mv',
       //markers:true,
       invalidateOnRefresh:true
   },
@@ -100,7 +95,7 @@ const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
 const mv_fade = document.querySelectorAll('.mv_fade');
 
 
-mm.add("(min-width: 1025px)", () => {
+
   gsap.timeline({
     scrollTrigger : {
         trigger: '.mv_slogan',
@@ -214,11 +209,11 @@ fixed_area.forEach((e)=>{
     y:0,
     duration:1
   })
-  .to({},{duration:1})
+  
   
 });
   
-})
+
 
 
 

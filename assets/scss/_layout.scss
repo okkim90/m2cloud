@@ -434,6 +434,8 @@ body {
     padding: 144px 0 164px;
     position: relative;
     overflow: hidden;
+    background-color: #fff;
+    z-index: 10;
 
     @include tablet {
         padding: 86px 0 100px;
@@ -585,9 +587,26 @@ body {
     }
 }
 .mv {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
+    position: sticky;
+    
+    left: 0;
+    top: 0;
+    &_vid {
+        &_box {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        
+    }
     &::after {
         content: '';
         position: absolute;
@@ -601,26 +620,20 @@ body {
         background-color: #000;
         font-size: 100px;
         color: #fff;
-        overflow: hidden;
+        //overflow: hidden;
        
-    }
-    video {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        object-fit: cover;
     }
     &_cont {
         position: relative;
         z-index: 10;
+        overflow: hidden;
         //padding-bottom: 50vh;
+        //transform: translateY(-100vh);
     }
     &_tit {
         width: 100%;
         height: 150vh;
-
+        
         &_cont {
             height: 100vh;
             display: flex;
