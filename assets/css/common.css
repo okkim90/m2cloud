@@ -3822,6 +3822,7 @@ input::-webkit-search-results-decoration {
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
+  height: 200vh;
 }
 @media (max-width: 1024px) {
   .mv_txt {
@@ -3852,7 +3853,7 @@ input::-webkit-search-results-decoration {
   }
 }
 .mv_txt_cont {
-  height: 120vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4918,7 +4919,7 @@ input::-webkit-search-results-decoration {
 .popup.on {
   opacity: 1;
   visibility: visible;
-  z-index: 9999;
+  z-index: 10000;
 }
 .popup_inner {
   display: flex;

@@ -656,7 +656,7 @@ body {
         text-align: center;
         font-weight: bold;
         line-height: 1.4;
-        //height: 100vh;
+        height: 200vh;
 
         @include tablet {
             font-size: 26px;
@@ -681,11 +681,12 @@ body {
             
         }
         &_cont {
-            height: 120vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            //position: absolute;
             @include tablet {
                 height: 100vh;
             }
@@ -1666,7 +1667,7 @@ inherits: false;
     &.on {
         opacity: 1;
         visibility: visible;
-        z-index: 9999;
+        z-index: 10000;
     }
     &_inner {
         display: flex;

@@ -229,15 +229,16 @@ const timeline = gsap.timeline({
   
   scrollTrigger : {
       trigger: '.mv_txt',
-      start: "5% center",
+      start: "top top",
       //end: ()=> `+=${cover_img_h}`,
-      end: "75% center",
-      // pinSpacing: false,
+      end: "bottom bottom",
+       //pinSpacing: false,
       // pinType: "fixed",
-      //anticipatePin:1,
-      scrub:0.3,
-      //pin: '.mv_txt_cont',
-      //markers:true,
+      pinType: "fixed",
+      anticipatePin:1,
+      scrub:1,
+      pin: '.mv_txt_cont',
+     // markers:true,
       invalidateOnRefresh:true,
       //yoyo: true,
   },
@@ -261,7 +262,7 @@ mm.add("(min-width: 1025px)", () => {
         trigger: '.logi_fix',
         start: "top 85%",
         //end: ()=> `+=${cover_img_h}`,
-        end: "90% center",
+        end: "80% center",
         // pinSpacing: false,
         // pinType: "fixed",
         //anticipatePin:1,
@@ -275,7 +276,7 @@ mm.add("(min-width: 1025px)", () => {
   .from('.logi_fix_img_inner',{ width:'100%',ease:'none', duration:1},0)
   .to('.logi_fix_img1',{width:'88.61%',ease:'none', duration:1},0)
 
-  .to('.logi_fix_img2',{y:0, opacity:1,ease:'none', duration:0.5},1)
+  .to('.logi_fix_img2',{y:0, opacity:1,ease:'none', duration:1},0)
 })
 
 
@@ -510,6 +511,7 @@ const solution_list_nav = ['LTE','BLE','LTE+BLE'];
 const solution_list = new Swiper('.solution_list', {
   spaceBetween: 24,
   loop: true,
+  loopedSlides:2,
   speed: 400,
   navigation: {
     nextEl: '.solution_list_next',
