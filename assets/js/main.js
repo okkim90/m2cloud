@@ -105,7 +105,7 @@ mm.add("(min-width: 1025px)", () => {
     scrollTrigger : {
         trigger: '.mv_slogan',
         start: "top top",
-        //end: ()=> `+=${cover_img_h}`,
+        //end: ()=> '+=1000',
         end: "bottom center",
         //pinSpacing: false,
         pinType: "fixed",
@@ -118,13 +118,13 @@ mm.add("(min-width: 1025px)", () => {
   })
   .to('.mv_slogan_item1', {opacity:1,y:0, duration:1, ease:'none', },0)
   .to({},{duration:1})
-  .to('.mv_slogan_item1', {opacity:0,y:'-20%',duration:1, ease:'none',},1)
+  .to('.mv_slogan_item1', {opacity:0,y:'-10%',duration:1, ease:'none',},1)
   .to('.mv_slogan_item2', {opacity:1,y:0, duration:1, ease:'none',},1)
   .to({},{duration:1})
-  .to('.mv_slogan_item2', {opacity:0,y:'-20%',duration:1, ease:'none', },2)
+  .to('.mv_slogan_item2', {opacity:0,y:'-10%',duration:1, ease:'none', },2)
   .to('.mv_slogan_item3', {opacity:1,y:0,duration:1, ease:'none',  },2)
   .to({},{duration:1})
-  .to('.mv_slogan_item3', {opacity:0,y:'-20%',duration:1, ease:'none', },3)
+  .to('.mv_slogan_item3', {opacity:0,y:'-10%',duration:1, ease:'none', },3)
 
   gsap.to('.mv_tit_cont',{
     opacity:0,
@@ -168,20 +168,20 @@ fixed_area.forEach((e)=>{
   const fixed_area_bg = e.querySelector('.fixed_area_bg');
   const fixed_area_cont = e.querySelector('.fixed_area_cont');
   const fixed_area_item = e.querySelectorAll('.fixed_area_item');
-  gsap.timeline({
+  // gsap.timeline({
     
-    scrollTrigger : {
-        trigger: e,
-        start: "top top",
-        end: "bottom bottom",
-        pinSpacing: true,
-        pinType: "fixed",
-        scrub:0.1,
-        //anticipatePin:1,
-        pin: fixed_area_bg,
-        invalidateOnRefresh:true
-    },
-  });
+  //   scrollTrigger : {
+  //       trigger: e,
+  //       start: "top top",
+  //       end: "bottom bottom",
+  //       pinSpacing: true,
+  //       pinType: "fixed",
+  //       scrub:0.1,
+  //       //anticipatePin:1,
+  //       pin: fixed_area_bg,
+  //       invalidateOnRefresh:true
+  //   },
+  // });
 
   gsap.timeline({
     scrollTrigger : {
@@ -257,6 +257,31 @@ timeline.to('.mv_txt_item1',{opacity:1, },0)
 .to('.mv_txt_item3',{opacity:1,  },2 )
 //.to({},{duration:1})
 
+
+
+
+mm.add("(min-width: 1025px)", () => {
+  gsap.timeline({
+    scrollTrigger : {
+        trigger: '.logi_fix',
+        start: "top 85%",
+        //end: ()=> `+=${cover_img_h}`,
+        end: "90% center",
+        // pinSpacing: false,
+        // pinType: "fixed",
+        //anticipatePin:1,
+        scrub:0.2,
+        //pin: '.mv_txt_cont',
+        //markers:true,
+        invalidateOnRefresh:true,
+        //yoyo: true,
+    },
+  })
+  .from('.logi_fix_img_inner',{ width:'100%',ease:'none', duration:1},0)
+  .to('.logi_fix_img1',{width:'88.61%',ease:'none', duration:1},0)
+
+  .to('.logi_fix_img2',{y:0, opacity:1,ease:'none', duration:0.5},1)
+})
 
 
 
@@ -354,6 +379,9 @@ gsap.to('.vid_open_cv',{
         //markers: true,
     }
 });
+
+
+
 
 
 
@@ -583,3 +611,4 @@ init_logistic_swiper();
 window.addEventListener('resize',()=>{
   init_logistic_swiper()
 })
+

@@ -4,10 +4,16 @@
  .m_only {
     display: none;
 }
+.tb_only2 {
+    display: none;
+}
 @include tablet {
     
     .pc_only {
         display: none;
+    }
+    .tb_only2 {
+        display: block;
     }
 }
 @include mobile {
@@ -29,7 +35,7 @@ body {
 
 
 #wrap {
-    overflow: hidden;
+    //overflow: hidden;
     
 }
 
@@ -427,7 +433,7 @@ body {
 .sec {
     padding: 144px 0 164px;
     position: relative;
-
+    overflow: hidden;
 
     @include tablet {
         padding: 86px 0 100px;
@@ -587,7 +593,7 @@ body {
         background-color: #000;
         font-size: 100px;
         color: #fff;
-        
+        overflow: hidden;
        
     }
     video {
@@ -605,7 +611,7 @@ body {
     }
     &_tit {
         width: 100%;
-        height: 200vh;
+        height: 150vh;
 
         &_cont {
             height: 100vh;
@@ -683,7 +689,7 @@ body {
     //     padding-top: 25vh;
     // }
     &_slogan {
-        height: 300vh;
+        height: 200vh;
         &_cont {
             height: 100vh;
         }
@@ -702,7 +708,7 @@ body {
         text-align: center;
         font-weight: bold;
         opacity: 0;
-        transform: translateY(20%);
+        transform: translateY(10%);
         
         // transform: scale(0.5);
 
@@ -1019,16 +1025,10 @@ inherits: false;
 }
 
 .sec_tech {
-    height: 300vh;
+    
    
     box-sizing: border-box;
-    padding-top: 210px;
-    @include tablet {
-        padding-top: 160px;
-    }
-    @include mobile {
-        padding-top: 100px;
-    }
+    
     .tech_text {
         position: relative;
         z-index: 99;
@@ -1068,8 +1068,15 @@ inherits: false;
     }
 }
 .fixed_area {
+    
+    overflow: visible;
+    padding: 0;
+    &_inner {
+        position: relative;
+        height: 300vh;
+    }
     &_bg {
-        position: absolute;
+        position: sticky;
         width: 100%;
         height: 100vh;
         left: 0;
@@ -1081,7 +1088,7 @@ inherits: false;
             height: 100%;
             left: 0;
             top: 0;
-            background-color: rgba(#000,.4);
+            //background-color: rgba(#000,.4);
         }
 
         * {
@@ -1091,6 +1098,19 @@ inherits: false;
             width: 100%;
             height: 100vh;
             object-fit: cover;
+        }
+    }
+    &_cont {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        padding-top: 210px;
+        @include tablet {
+            padding-top: 160px;
+        }
+        @include mobile {
+            padding-top: 100px;
         }
     }
     
@@ -1279,6 +1299,7 @@ inherits: false;
 }
 
 .logistic {
+    overflow: visible;
     .inner_sec {
         margin-top: 100px;
         @include tablet {
@@ -1288,6 +1309,47 @@ inherits: false;
             margin-top: 36px;
         }
     }
+
+    .logi_fix {
+        height: 240vh;
+        //margin-top: calc((74.29vw - 100vh)/2 + 6vh);
+        position: relative;
+        &_img {
+            //height: 100vh;
+            width: 100%;
+            position: sticky;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            //overflow-x: hidden;
+            padding-top: 120px;
+            .img_box {
+                position: relative;
+                width: 984px;
+                //padding-right: 10%;
+                box-sizing: border-box;
+            }
+            &1 {
+                //max-width: none;
+                width: 100%;
+                position: relative;
+               
+            }
+            &2 {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                //width: 22.76%;
+                width: 224px;
+                transform: translateY(120%);
+                //opacity: 0;
+            }
+        }
+    }
+
+
     &_list {
         position: relative;
         .swiper-wrapper {
@@ -1439,6 +1501,15 @@ inherits: false;
                 }
             }
         }
+    }
+    .logi_img1 {
+        width: 88.61%;
+    }
+    .logi_img2 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 22.76%;
     }
 }
 
