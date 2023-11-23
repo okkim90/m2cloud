@@ -79,7 +79,7 @@ let mm = gsap.matchMedia();
 
 gsap.timeline({
   scrollTrigger : {
-      trigger: mv_section,
+      trigger: '.mv_area',
       start: "top top",
       //end: ()=> `+=${cover_img_h}`,
       end: "bottom bottom",
