@@ -575,7 +575,15 @@ body {
     }
 } 
 
-
+.top_mv {
+    overflow: hidden;
+    height: 100vh;
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 .mv {
     position: absolute;
     width: 100%;
