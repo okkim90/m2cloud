@@ -1916,6 +1916,9 @@ inherits: false;
                 @include tablet {
                     padding: 60px 46px;
                 }
+                @include mobile {
+                    padding: 48px 24px;
+                }
                 p {
                     margin-top: 24px;
                     @include tablet {

@@ -5176,6 +5176,11 @@ input::-webkit-search-results-decoration {
     padding: 60px 46px;
   }
 }
+@media (max-width: 767px) {
+  .popup_system_error .popup_cont_inner {
+    padding: 48px 24px;
+  }
+}
 .popup_system_error .popup_cont_inner p {
   margin-top: 24px;
 }
