@@ -1455,6 +1455,9 @@ inherits: false;
             @include tablet {
                 display: block;
             }
+            @include mobile {
+                display: none;
+            }
         }
         
     }

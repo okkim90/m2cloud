@@ -4680,6 +4680,11 @@ input::-webkit-search-results-decoration {
     display: block;
   }
 }
+@media (max-width: 767px) {
+  .logistic_list .swiper_ctrl_btn {
+    display: none;
+  }
+}
 .logistic_card {
   background-color: #fff;
   height: 416px;

@@ -20,15 +20,28 @@ const prevWidth = window.innerWidth;
 /* header */
 const mv_section = document.querySelector('.mv_section');
 const header = document.querySelector('.header');
-ScrollTrigger.create({
-    trigger: '.hd_no_bg',
-    start:()=> "top " + header.offsetHeight,
-    end:()=> "bottom " + header.offsetHeight,
-    onEnter: () => header.classList.remove('on'),
-    onLeave: () => {header.classList.add('on')},
-    onEnterBack:() => header.classList.remove('on'),
-    onLeaveBack:() => {header.classList.add('on')},
-});
+// ScrollTrigger.create({
+//     trigger: '.hd_no_bg',
+//     start:()=> "top " + header.offsetHeight,
+//     end:()=> "bottom " + header.offsetHeight,
+//     onEnter: () => header.classList.remove('on'),
+//     onLeave: () => {header.classList.add('on')},
+//     onEnterBack:() => header.classList.remove('on'),
+//     onLeaveBack:() => {header.classList.add('on')},
+// });
+
+function hd_bg(){
+  let st = window.pageYOffset;
+  let hd_bg_start = document.querySelector('.coldchain').offsetTop;
+
+  if(st > hd_bg_start){
+    header.classList.add('on')
+  }else{
+    header.classList.remove('on')
+  }
+}
+
+
 
 let lastScrollTop = 0;
 let didScroll = false;
@@ -679,4 +692,7 @@ const gnb_pos = () => {
 }
 
 
-['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, gnb_pos()));
+['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
+  hd_bg()
+  gnb_pos()
+}));
