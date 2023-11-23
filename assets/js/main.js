@@ -244,14 +244,16 @@ const timeline = gsap.timeline({
   },
 });
 
-timeline.to('.mv_txt_item1',{opacity:1, },0)
+timeline
+.to({},{duration:1})
+.to('.mv_txt_item1',{opacity:1, },0)
 //.to({},{duration:1})
 .to('.mv_txt_item1',{opacity:0.15, },1)
 .to('.mv_txt_item2', {opacity:1,  },1 )
 //.to({},{duration:1})
 .to('.mv_txt_item2',{opacity:0.15,},2)
 .to('.mv_txt_item3',{opacity:1,  },2 )
-//.to({},{duration:1})
+.to({},{duration:1})
 
 
 

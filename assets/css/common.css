@@ -3823,6 +3823,7 @@ input::-webkit-search-results-decoration {
   font-weight: bold;
   line-height: 1.4;
   height: 200vh;
+  position: relative;
 }
 @media (max-width: 1024px) {
   .mv_txt {
@@ -3858,6 +3859,10 @@ input::-webkit-search-results-decoration {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 @media (max-width: 1024px) {
   .mv_txt_cont {
@@ -4188,6 +4193,10 @@ input::-webkit-search-results-decoration {
   -webkit-text-fill-color: transparent;
 }
 
+.coldchain {
+  position: relative;
+  z-index: 10;
+}
 .coldchain_list {
   display: flex;
   gap: 24px;
