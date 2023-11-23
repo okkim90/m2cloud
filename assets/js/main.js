@@ -21,7 +21,7 @@ const prevWidth = window.innerWidth;
 const mv_section = document.querySelector('.mv_section');
 const header = document.querySelector('.header');
 ScrollTrigger.create({
-    trigger: mv_section,
+    trigger: '.hd_no_bg',
     start:()=> "top " + header.offsetHeight,
     end:()=> "bottom " + header.offsetHeight,
     onEnter: () => header.classList.remove('on'),
@@ -51,7 +51,7 @@ function hasScrolled(){
   if(Math.abs(lastScrollTop - st) < delta){
     return;
   }
-  if (st > lastScrollTop){
+  if (st > lastScrollTop && window.pageYOffset > 300){
     header.classList.add('up');
     if(window.pageYOffset + document.documentElement.clientHeight  > document.querySelector('#footer').offsetTop + 100){
         btn_top.classList.add('up')
@@ -60,7 +60,7 @@ function hasScrolled(){
     }
   }else{
     header.classList.remove('up');
-    if(window.pageYOffset > 200){
+    if(window.pageYOffset > 300){
         btn_top.classList.add('up')
     }else{
         btn_top.classList.remove('up')
@@ -94,7 +94,7 @@ gsap.timeline({
 const mv_slogan_item = document.querySelectorAll('.mv_slogan_item');
 const mv_fade = document.querySelectorAll('.mv_fade');
 
-
+mm.add("(min-width: 1025px)", () => {
 
   gsap.timeline({
     scrollTrigger : {
@@ -138,20 +138,20 @@ const mv_fade = document.querySelectorAll('.mv_fade');
   });
   
   
-  gsap.to('.mv_txt',{
-    opacity:1,
-    //y:0,
-    ease: 'power2.inOut',
-    scrollTrigger : {
-        trigger: '.mv_txt',
-        start: "top center",
+  // gsap.to('.mv_txt',{
+  //   opacity:1,
+  //   //y:0,
+  //   ease: 'power2.inOut',
+  //   scrollTrigger : {
+  //       trigger: '.mv_txt',
+  //       start: "top center",
   
-        end: "center center",
-        scrub: 1,
-        invalidateOnRefresh:true,
-        //markers: true,
-    },
-  })
+  //       end: "center center",
+  //       scrub: 1,
+  //       invalidateOnRefresh:true,
+  //       //markers: true,
+  //   },
+  // })
 
   
 
@@ -214,7 +214,7 @@ fixed_area.forEach((e)=>{
 });
   
 
-
+});
 
 
 
@@ -635,3 +635,44 @@ window.addEventListener('resize',()=>{
   init_logistic_swiper()
 })
 
+
+
+const gnb_pos = () => {
+  const elements = document.querySelectorAll(".sec_area");
+  const nav_item = document.querySelectorAll('.nav_item');
+  elements.forEach((e, i)=>{
+      
+      ScrollTrigger.create({
+          trigger: e,
+          start: `top center`,
+          end: `bottom center`,
+          onEnter: function() {
+              
+              nav_item[i].classList.add('on');
+          },
+         
+          onEnterBack: function() {
+              
+              nav_item[i].classList.add('on');
+          },
+          onLeave: function() {
+              nav_item.forEach((nav)=>{
+                  nav.classList.remove('on')
+              })
+              //nav_item[i].classList.add('on');
+          },
+          onLeaveBack: function() {
+              nav_item.forEach((nav)=>{
+                  nav.classList.remove('on')
+              })
+              //nav_item[i].classList.add('on');
+          },
+          
+          invalidateOnRefresh:true,
+         //markers: true,
+      });
+  });
+}
+
+
+['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, gnb_pos()));
