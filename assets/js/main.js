@@ -557,16 +557,38 @@ function gnb_link(sec){
 }
 
 /* popup solutuion */ 
+let popup_slide = undefined;
 function open_popup(popup){
   //let target_popup = document.querySelector(`.popup_solution${idx}`);
   let target_popup = document.querySelector(`.${popup}`);
   target_popup.classList.add('on' );
 
   let video = target_popup.querySelector('video');
+  let slide = target_popup.querySelector('.popup_slide');
   if(video){
     video.play();
   }
+ 
+  if(slide){
+
+    popup_slide = new Swiper(slide,{
+      loop:true,
+      pagination: {   //페이징 사용자 설정
+        el: ".popup_slide_paging",   //페이징 태그 클래스 설정 
+        type : 'bullets',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.certification_slide_next',
+        prevEl: '.certification_slide_prev',
+      },
+    });
+  }
 }
+
+
+
+
 
 
 /* close popup */
@@ -574,9 +596,15 @@ function close_popup(target){
   let target_popup = target.closest('.popup');
   target_popup.classList.remove('on');
   let video = target_popup.querySelector('video');
+  let slide = target_popup.querySelector('.popup_slide');
   if(video){
     video.pause();
     video.currentTime = 0;
+  }
+  if(slide){
+
+    popup_slide.destroy();
+    popup_slide = undefined;
   }
 }
 
