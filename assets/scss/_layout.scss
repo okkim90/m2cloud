@@ -772,6 +772,15 @@ body {
         font-size: 26px;
         text-align: center;
         font-weight: bold;
+        .tit {
+            font-size: 36px;
+            line-height: 1.3;
+            font-weight: bold;
+            margin-bottom: 1.4em;
+            @include mobile {
+                font-size: 26px;
+            }
+        }
         @include mobile {
             padding: 60px 24px;
             font-size: 20px;
