@@ -40,7 +40,9 @@ function hd_bg(){
     header.classList.remove('on')
   }
 }
-
+['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
+  hd_bg()
+}));
 
 
 let lastScrollTop = 0;
@@ -691,8 +693,6 @@ const gnb_pos = () => {
   });
 }
 
+window.addEventListener('DOMContentLoaded',gnb_pos());
 
-['DOMContentLoaded', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
-  hd_bg()
-  gnb_pos()
-}));
+
