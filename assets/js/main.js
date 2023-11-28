@@ -484,7 +484,7 @@ const isInViewport = (target) => {
     return (top + (wh/10) < 0 )  && (bot - (wh/10) > 0) ;
 };
 const aniBox = document.querySelectorAll('.aniBox');
-['resize', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
+['DOMContentLoaded', 'resize', 'scroll'].forEach(event => window.addEventListener(event, ()=>{
     wh = window.outerHeight;
     aniBox.forEach((e)=>{
         if(isInViewport(e)){
